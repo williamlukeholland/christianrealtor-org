@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "Include a location keyword like Tampa Bay, Brandon, Riverview, etc." }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "MMMM YYYY" }
+      - { label: "Category", name: "category", widget: "select", options: ["Market Update", "Buying a Home", "Selling a Home", "Neighborhood Spotlight", "Investing", "Faith & Life"] }
+      - { label: "Summary (SEO Description)", name: "description", widget: "string", hint: "1-2 sentences summarizing the post — appears in Google search results" }
+      - { label: "Hero Image URL", name: "hero_image", widget: "string", hint: "Paste an Unsplash image URL e.g. https://images.unsplash.com/photo-XXXXX?w=1200&q=80" }
+      - { label: "Hero Image Alt Text", name: "hero_alt", widget: "string", hint: "Describe the image for SEO e.g. Tampa Bay Florida homes for sale" }
+      - { label: "Body", name: "body", widget: "markdown" }

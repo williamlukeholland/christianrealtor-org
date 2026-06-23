@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#782F40"/>
+  <!-- Cross watermark behind monogram -->
+  <rect x="29" y="8" width="6" height="48" rx="1" fill="#CEB888" opacity="0.35"/>
+  <rect x="8" y="20" width="48" height="6" rx="1" fill="#CEB888" opacity="0.35"/>
+  <!-- LH Monogram -->
+  <text x="32" y="42" font-family="Georgia, 'Playfair Display', serif" font-size="26" font-weight="700" fill="#FAF7F0" text-anchor="middle">LH</text>
+</svg>
