@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://christianrealtor.org/home-value.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://christianrealtor.org/process.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,6 +32,11 @@
   </url>
   <url>
     <loc>https://christianrealtor.org/faq.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://christianrealtor.org/blog/how-to-know-what-your-home-is-worth-tampa-bay.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
