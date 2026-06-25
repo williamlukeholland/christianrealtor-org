@@ -480,9 +480,69 @@
           <label for="hv-notes">Anything else we should know about your home?</label>
           <textarea id="hv-notes" name="notes" placeholder="Recent renovations, pool, waterfront lot, HOA community, etc."></textarea>
         </div>
-        <button type="submit" class="submit-btn">Request My Free Home Valuation</button>
+        <button type="submit" class="submit-btn" id="cma-submit-btn">Request My Free Home Valuation</button>
+        <div id="cma-form-status" style="display:none; margin-top:1rem; padding:1rem; border-radius:2px; font-size:0.9rem; text-align:center;"></div>
         <p class="form-disclaimer">Your information is never shared or sold. Luke will respond personally within 24 hours.</p>
       </form>
+      <script>
+        (function() {
+          var form = document.getElementById('cma-form');
+          var status = document.getElementById('cma-form-status');
+          var btn = document.getElementById('cma-submit-btn');
+
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            var data = new FormData(form);
+
+            var fubPayload = {
+              first_name:       data.get('first_name') || '',
+              last_name:        data.get('last_name') || '',
+              email:            data.get('email') || '',
+              phone:            data.get('phone') || '',
+              property_address: data.get('property_address') || '',
+              bedrooms:         data.get('bedrooms') || '',
+              bathrooms:        data.get('bathrooms') || '',
+              timeline:         data.get('timeline') || '',
+              notes:            data.get('notes') || ''
+            };
+
+            var formspreeReq = fetch(form.action, {
+              method: 'POST', body: data,
+              headers: { 'Accept': 'application/json' }
+            });
+            var fubReq = fetch('/.netlify/functions/submit-cma', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(fubPayload)
+            });
+
+            Promise.allSettled([formspreeReq, fubReq]).then(function(results) {
+              var formspreeOk = results[0].status === 'fulfilled' && results[0].value.ok;
+              status.style.display = 'block';
+              if (formspreeOk) {
+                status.style.background = 'rgba(206,184,136,0.15)';
+                status.style.color = 'var(--navy)';
+                status.style.border = '1px solid var(--gold)';
+                status.innerHTML = '<strong>Request received!</strong> Luke will personally review comparables for your property and reach out within 24 hours.';
+                form.reset();
+                if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', {'send_to': 'AW-18182566156/X8z1CI7D0b8cEIzij95D'});
+                  gtag('event', 'cma_request', {'event_category': 'lead', 'event_label': 'home_value_page'});
+                }
+              } else {
+                status.style.background = '#fff5f5';
+                status.style.color = '#c53030';
+                status.style.border = '1px solid #fc8181';
+                status.textContent = 'Something went wrong. Please email luke@christianrealtor.org directly.';
+                btn.disabled = false;
+                btn.textContent = 'Request My Free Home Valuation';
+              }
+            });
+          });
+        })();
+      </script>
     </div>
   </div>
 </section>
