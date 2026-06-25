@@ -197,7 +197,9 @@
   }
 
   /* ── HAMBURGER MENU ── */
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+  /* ── HAMBURGER MENU ── */
+  .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+  @media (min-width: 901px) { .hamburger { display: none !important; } }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -223,11 +225,7 @@
     color: rgba(255,255,255,0.6); background: none; border: none; cursor: pointer;
     line-height: 1;
   }
-  @media (max-width: 900px) {
-    .hamburger { display: flex; }
-    .nav-links { display: none !important; }
-    .nav-cta { display: none; }
-  }
+
 </style>
 <!-- Follow Up Boss Pixel -->
 <script>
@@ -260,6 +258,46 @@ window.widgetTracker("send", "pageview");
   </ul>
   <a href="index.html#contact" class="nav-cta">Get in Touch</a>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+    <a href="index.html#about">About</a>
+    <a href="index.html#testimonials">Reviews</a>
+    <a href="process.html">Buy &amp; Sell</a>
+    <a href="difference.html">Why Us</a>
+    <a href="blog.html">Blog</a>
+    <a href="faq.html">FAQ</a>
+    <a href="tools.html">Tools</a>
+  <a href="index.html#contact" class="mobile-cta">Get in Touch</a>
+</div>
+
+<script>
+  (function() {
+    var btn = document.getElementById('hamburger-btn');
+    var menu = document.getElementById('mobile-menu');
+    var close = document.getElementById('mobile-close');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+      menu.classList.add('open');
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    });
+    close.addEventListener('click', function() {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
+</script>
 
 <!-- PAGE HERO -->
 <section id="page-hero">
