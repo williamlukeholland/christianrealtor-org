@@ -34,7 +34,7 @@ exports.handler = async function (event) {
     const payload = {
       source: "christianrealtor.org — Home Value Page",
       system: "Custom Website",
-      type:   "Seller Inquiry",
+      type:   "General Inquiry",
       message: fullMessage,
       person: {
         firstName: first_name,
