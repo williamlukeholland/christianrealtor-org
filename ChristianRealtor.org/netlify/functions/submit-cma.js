@@ -41,7 +41,7 @@ exports.handler = async function (event) {
         lastName:  last_name,
         emails:    email ? [{ value: email }] : [],
         phones:    phone ? [{ value: phone }] : [],
-        tags:      ["CMA Request", "Seller", "Home Value Page"],
+        tags:      ["CMA Request", "Home Value Page"],
         customFields: [
           { name: "Property Address", value: property_address },
           { name: "Selling Timeline",  value: timeline },
