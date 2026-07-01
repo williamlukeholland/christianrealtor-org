@@ -287,7 +287,7 @@
     <div class="tab-panel" id="affordability-panel">
       <div class="calc-card">
         <h2>Home Affordability Calculator</h2>
-        <p class="desc">Find out how much home you can comfortably afford based on your income, debts, and down payment. Uses the standard 28/36 debt-to-income guidelines lenders use.</p>
+        <p class="desc">Find out how much home you can comfortably afford based on your income, debts, and down payment. Uses the standard 28/36 DTI guidelines lenders use — and factors in estimated Florida insurance and property taxes so your number reflects real purchasing power.</p>
         <div class="form-grid">
           <div class="form-field"><label>Annual Gross Income</label><input type="number" id="aff-income" placeholder="80000" min="0"></div>
           <div class="form-field"><label>Monthly Debt Payments</label><input type="number" id="aff-debt" placeholder="500" min="0"></div>
@@ -299,11 +299,15 @@
           <p style="color: var(--slate); font-size: 0.9rem;">Estimated Maximum Home Price</p>
           <div class="big-number" id="aff-max"></div>
           <div class="breakdown-grid">
-            <div class="breakdown-item"><div class="b-label">Max Monthly Payment</div><div class="b-value" id="aff-payment"></div></div>
             <div class="breakdown-item"><div class="b-label">Down Payment</div><div class="b-value" id="aff-downshow"></div></div>
             <div class="breakdown-item"><div class="b-label">Loan Amount</div><div class="b-value" id="aff-loan"></div></div>
+            <div class="breakdown-item">
+              <div class="b-label">Est. Tax &amp; Insurance</div>
+              <div class="b-value" id="aff-ti"></div>
+              <div style="font-size: 0.72rem; color: var(--slate); margin-top: 0.25rem;">per month</div>
+            </div>
           </div>
-          <div class="disclaimer" style="margin-top: 1rem;">&#9888;&#65039; Uses 28% front-end DTI ratio. Connect with Luis Peguero at <a href="https://loanswithluis.com" target="_blank" style="color: var(--navy);">loanswithluis.com</a> for a real pre-approval.</div>
+          <div class="disclaimer" style="margin-top: 1rem;">&#9888;&#65039; Tax &amp; insurance estimates based on Gulf Coast Florida averages from Fairway Independent Mortgage — already factored into your max price above. For a full payment breakdown, use the <button onclick="sendToMortgage()" style="background:none;border:none;padding:0;color:var(--navy);font-weight:700;font-size:inherit;cursor:pointer;text-decoration:underline;">Mortgage Calculator</button>. For a real pre-approval, connect with Luis Peguero at <a href="https://loanswithluis.com" target="_blank" style="color: var(--navy);">loanswithluis.com</a>.</div>
         </div>
       </div>
     </div>
@@ -455,15 +459,60 @@ window.widgetTracker("send", "pageview");
     const down = parseFloat(document.getElementById('aff-down').value) || 0;
     const rate = parseFloat(document.getElementById('aff-rate').value) / 100 / 12;
     if (!income || !rate) return alert('Please fill in all required fields.');
-    const maxPayment = Math.min((income / 12) * 0.28, (income / 12) * 0.36 - debt);
+
+    // Max PITI payment under 28% front-end DTI (also capped by 36% back-end)
+    const maxPITI = Math.min((income / 12) * 0.28, (income / 12) * 0.36 - debt);
     const term = 30 * 12;
-    const maxLoan = maxPayment * (Math.pow(1 + rate, term) - 1) / (rate * Math.pow(1 + rate, term));
-    const maxPrice = maxLoan + down;
-    document.getElementById('aff-max').innerHTML = fmt(maxPrice);
-    document.getElementById('aff-payment').textContent = fmt(maxPayment) + '/mo';
+
+    // Iteratively solve for max price accounting for insurance + tax tiers
+    // Insurance: <$400k=$225/mo, $400k-$700k=$250/mo, $700k+=$300/mo
+    // Tax: price * 0.01 / 12 (1% annual rate, Luis's anchors: $200k=$200/mo, $400k=$400/mo)
+    function getInsurance(p) {
+      if (p < 400000) return 225;
+      if (p < 700000) return 250;
+      return 300;
+    }
+    function getTax(p) { return (p * 0.01) / 12; }
+
+    // Iterate: start with PI-only estimate, refine for IT
+    let estPrice = 0;
+    let guess = maxPITI * (Math.pow(1 + rate, term) - 1) / (rate * Math.pow(1 + rate, term)) + down;
+    for (let i = 0; i < 10; i++) {
+      const ins = getInsurance(guess);
+      const tax = getTax(guess);
+      const maxPI = maxPITI - ins - tax;
+      if (maxPI <= 0) { guess = down; break; }
+      const loan = maxPI * (Math.pow(1 + rate, term) - 1) / (rate * Math.pow(1 + rate, term));
+      guess = loan + down;
+    }
+    estPrice = Math.max(0, guess);
+
+    const insEst = getInsurance(estPrice);
+    const taxEst = getTax(estPrice);
+
+    // Store for sendToMortgage
+    window._affResult = { price: Math.round(estPrice), down, rate: parseFloat(document.getElementById('aff-rate').value), insEst, taxEst };
+
+    const loanAmt = Math.max(0, estPrice - down);
+    document.getElementById('aff-max').innerHTML = fmt(estPrice);
     document.getElementById('aff-downshow').textContent = fmt(down);
-    document.getElementById('aff-loan').textContent = fmt(maxLoan);
+    document.getElementById('aff-loan').textContent = fmt(loanAmt);
+    document.getElementById('aff-ti').textContent = fmt(insEst + taxEst);
     document.getElementById('aff-result').classList.add('show');
+  }
+
+  function sendToMortgage() {
+    const r = window._affResult;
+    if (!r) return;
+    showTool('mortgage');
+    document.getElementById('mort-price').value = r.price;
+    document.getElementById('mort-down').value = Math.round(r.down);
+    document.getElementById('mort-rate').value = r.rate;
+    document.getElementById('mort-tax').value = Math.round(r.taxEst * 12);
+    document.getElementById('mort-insurance').value = Math.round(r.insEst * 12);
+    document.getElementById('mort-term').value = '30';
+    // Scroll to top of tools section
+    document.getElementById('tools').scrollIntoView({ behavior: 'smooth' });
   }
 
   function calcClosing() {
