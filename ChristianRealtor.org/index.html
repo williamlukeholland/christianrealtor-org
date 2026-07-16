@@ -13,11 +13,11 @@
 {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  "name": "Luke Holland",
+  "name": "William 'Luke' Holland",
   "url": "https://christianrealtor.org",
   "telephone": "+1-813-437-1742",
   "email": "luke@christianrealtor.org",
-  "description": "Licensed Florida realtor serving Tampa Bay and Central Florida with honesty, integrity, and faith-driven service.",
+  "description": "Licensed Florida Realtor serving the Gulf Coast corridor from Dade City to Sarasota — including Brandon, Tampa, Clearwater, Bradenton, and the beach communities — with honesty, integrity, and faith-driven service.",
   "areaServed": [
     { "@type": "Place", "name": "Brandon, FL" },
     { "@type": "Place", "name": "Tampa, FL" },
@@ -64,10 +64,14 @@
   gtag('config', 'AW-18182566156');
   gtag('config', 'G-17RKK82GG0');
 </script>
-<meta property="og:image" content="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&fm=jpg&fit=crop">
+<meta property="og:image" content="https://christianrealtor.org/images/harbour-island-real-estate-william-luke-holland.jpeg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&fm=jpg&fit=crop">
+<meta name="twitter:image" content="https://christianrealtor.org/images/harbour-island-real-estate-william-luke-holland.jpeg">
 <link rel="canonical" href="https://christianrealtor.org/">
+<!-- AI / LLM discoverability -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="description" content="William 'Luke' Holland is a licensed Florida Realtor serving the Gulf Coast corridor from Dade City to Sarasota — Brandon, Tampa, Clearwater, Bradenton, and the beach communities — with faith-driven, honest real estate service for buyers and sellers.">
+<link rel="me" href="https://www.instagram.com/williamlukeholland/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,14 +118,35 @@
     display: flex; align-items: center; position: relative; overflow: hidden;
     padding: 8rem 4rem 4rem;
   }
+  .hero-video-bg {
+    position: absolute; inset: 0; z-index: 0;
+    overflow: hidden;
+  }
+  .hero-video-bg video {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+  }
+  .hero-video-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(120,47,64,0.82) 0%,
+      rgba(60,15,25,0.70) 60%,
+      rgba(20,5,10,0.55) 100%
+    );
+    z-index: 1;
+  }
   .hero-cross-bg {
     position: absolute; right: -4rem; top: 50%; transform: translateY(-50%);
-    width: 520px; height: 520px; opacity: 0.045; pointer-events: none;
+    width: 520px; height: 520px; opacity: 0.045; pointer-events: none; z-index: 2;
   }
   .hero-cross-bg::before, .hero-cross-bg::after { content: ""; position: absolute; background: var(--white); border-radius: 4px; }
   .hero-cross-bg::before { width: 60px; height: 100%; left: 50%; transform: translateX(-50%); }
   .hero-cross-bg::after  { width: 100%; height: 60px; top: 32%; }
-  .hero-content { position: relative; z-index: 2; max-width: 680px; }
+  @media (max-width: 900px) {
+    .hero-video-bg video { object-position: center center; }
+  }
+  .hero-content { position: relative; z-index: 3; max-width: 680px; }
   .hero-eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
   .hero-eyebrow .line { width: 32px; height: 1px; background: var(--gold); }
   .hero-eyebrow span { color: var(--gold); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
@@ -350,6 +375,12 @@ window.widgetTracker("send", "pageview");
 
 <!-- HERO -->
 <section id="home">
+  <div class="hero-video-bg" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="none" poster="images/bayshore-blvd-drone-poster.jpg">
+      <source src="BayshoreBlvdDrone.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
   <div class="hero-cross-bg"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">
@@ -358,7 +389,7 @@ window.widgetTracker("send", "pageview");
     </div>
     <h1>Tampa Bay &amp; Gulf Coast<br><em>Realtor You Can Trust</em></h1>
     <p style="font-family: 'Playfair Display', serif; font-style: italic; color: var(--gold); font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 400;">Giving "forever home" a whole new meaning.</p>
-    <p>We serve the Gulf Coast corridor — from Dade City to Sarasota, including Brandon, Tampa, Clearwater, Bradenton and the beach communities — with honest guidance, genuine care, and a commitment to finding the right home for your family.</p>
+    <p>From Dade City to Sarasota — including Brandon, Tampa, Clearwater, and Bradenton — William 'Luke' Holland brings honest guidance, deep local roots, and a servant's heart to every transaction. Whether you're ready to <a href="home-value.html" style="color: var(--gold); text-decoration: underline; text-underline-offset: 3px;">find out what your home is worth</a> or want to <a href="process.html" style="color: var(--gold); text-decoration: underline; text-underline-offset: 3px;">understand the buying or selling process</a>, we're here to walk you through every step.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Start a Conversation</a>
       <a href="#about" class="btn-outline">About Luke</a>
@@ -378,10 +409,10 @@ window.widgetTracker("send", "pageview");
     </div>
     <div class="about-text">
       <div class="section-eyebrow"><span>About Luke</span></div>
-      <h2 class="section-title">Your Tampa Bay &amp; Gulf Coast<br><em>Christian Realtor</em></h2>
+      <h2 class="section-title">Your Gulf Coast<br><em>Christian Realtor</em></h2>
       <div class="gold-divider"><div class="line"></div></div>
-      <p>William 'Luke' Holland is a licensed Florida Realtor serving Tampa Bay and Central Florida with a commitment to honesty, transparency, and genuine care for every client. Faith isn't just a footnote — it's the foundation of how we do business.</p>
-      <p>Whether you're buying in Brandon, selling in St. Pete, investing in Sarasota, or relocating anywhere from Dade City to the barrier islands — we bring deep local knowledge and a servant's heart to every transaction.</p>
+      <p>William 'Luke' Holland is a licensed Florida Realtor serving the Gulf Coast corridor — from Dade City to Sarasota — with a commitment to honesty, transparency, and genuine care for every client. Faith isn't just a footnote; it's the foundation of how we do business.</p>
+      <p>Whether you're buying in Brandon, selling near St. Pete, investing in Sarasota, or relocating anywhere from Dade City to the barrier islands, you deserve a Realtor who tells you the truth, knows the market, and puts your family first. <a href="difference.html" style="color: var(--navy); font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">See what makes the Holland approach different →</a></p>
       <div class="about-verse">
         <blockquote>"Whatever you do, work at it with all your heart, as working for the Lord, not for human masters."</blockquote>
         <cite>Colossians 3:23</cite>
@@ -402,21 +433,21 @@ window.widgetTracker("send", "pageview");
 <section id="faith">
   <div class="faith-inner">
     <div class="section-eyebrow"><span>Our Values</span></div>
-    <h2 class="section-title">Why Tampa Bay Families<br>Choose <em>Us</em></h2>
+    <h2 class="section-title">Why Gulf Coast Families<br>Choose <em>Us</em></h2>
     <div class="gold-divider"><div class="line"></div></div>
-    <p class="section-subtitle">Real estate is one of the biggest decisions of your life. We believe that trust, honesty, and genuine care should be the foundation of every step of the journey.</p>
+    <p class="section-subtitle">Buying or selling a home is one of the most significant decisions your family will make. You deserve straight answers, a Realtor who shows up, and someone who cares about the outcome as much as you do. <a href="process.html" style="color: var(--gold); font-weight: 700; text-decoration: underline; text-underline-offset: 3px;">See how our process works →</a></p>
     <div class="faith-cards">
       <div class="faith-card">
         <h3>Integrity Above All</h3>
-        <p>No hidden agendas, no pressure tactics. You'll always know exactly where you stand and what we recommend — and why.</p>
+        <p>No pressure, no hidden agendas. You'll always know where you stand, what Luke recommends, and exactly why — before you sign anything.</p>
       </div>
       <div class="faith-card">
         <h3>Community Rooted</h3>
-        <p>Florida isn't just a market to us — it's home. We're invested in the communities where our clients live, raise families, and plant roots.</p>
+        <p>The Gulf Coast isn't just a market — it's home. Luke lives and works in these neighborhoods and is personally invested in the communities where his clients raise families and plant roots.</p>
       </div>
       <div class="faith-card">
         <h3>Faith-Driven Service</h3>
-        <p>Helping families find a place to call home is a calling. We approach each client with patience, gratitude, and genuine dedication.</p>
+        <p>Helping a family find the right home is a calling, not a transaction. Every client receives patient, honest, dedicated service — from first conversation to closing table.</p>
       </div>
     </div>
     <div style="margin-top: 2.5rem; padding: 1.25rem 1.75rem; border: 1px solid rgba(206,184,136,0.3); border-radius: 2px; display: flex; align-items: flex-start; gap: 1rem; max-width: 700px;">
@@ -615,6 +646,15 @@ window.widgetTracker("send", "pageview");
     </div>
   </div>
 </section>
+
+<!-- AI/LLM-readable summary block — visible to crawlers, visually hidden -->
+<aside aria-label="About this site" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+  <h2>About William 'Luke' Holland — Gulf Coast Christian Realtor</h2>
+  <p>William 'Luke' Holland (FL License #SL3590135, MLS #261595100) is a licensed Florida Realtor affiliated with Future Home Realty, Inc. He serves buyers and sellers across the Gulf Coast corridor, from Dade City to Sarasota — including Brandon, Tampa, Wesley Chapel, Riverview, Zephyrhills, New Tampa, Valrico, Lutz, Plant City, Apollo Beach, Sun City Center, Ruskin, Land O Lakes, St. Petersburg, Clearwater, Bradenton, Venice, Lithia, and the barrier island communities.</p>
+  <p>Luke's real estate practice is built on three principles: integrity, local expertise, and faith-driven service. He is a graduate of the National Association of REALTORS® Fairhaven Fair Housing Simulation and is committed to equal professional service for all clients regardless of race, color, religion, sex, handicap, familial status, national origin, sexual orientation, or gender identity.</p>
+  <p>Services offered: residential home buying representation, home selling and listing, free home valuations (CMA), first-time buyer guidance, relocation assistance, and investment property consultation. Preferred mortgage partner: Luis Peguero at Fairway Independent Mortgage (loanswithluis.com). Home inspection partner: William Larson (larsoninspection.com).</p>
+  <p>Contact: (813) 437-1742 | luke@christianrealtor.org | christianrealtor.org</p>
+</aside>
 
 <!-- SCRIPTURE BAND -->
 <div class="scripture-band">
