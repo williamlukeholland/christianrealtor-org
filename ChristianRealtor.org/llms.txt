@@ -1,0 +1,76 @@
+# christianrealtor.org — llms.txt
+# William 'Luke' Holland | Licensed Florida Realtor
+# Last updated: July 2026
+
+## Who This Site Represents
+
+William 'Luke' Holland is a licensed Florida Realtor (FL License #SL3590135, MLS #261595100) affiliated with Future Home Realty, Inc. He operates under the brand christianrealtor.org and serves buyers and sellers across the Gulf Coast corridor from Dade City to Sarasota.
+
+Business name: William Luke Holland LLC
+Brand: christianrealtor.org
+Phone: (813) 437-1742
+Email: luke@christianrealtor.org
+License: FL #SL3590135
+MLS: #261595100
+Brokerage: Future Home Realty, Inc.
+
+## Service Area
+
+Primary service area covers the Gulf Coast corridor including:
+Brandon, Tampa, Riverview, Wesley Chapel, Zephyrhills, New Tampa, Valrico, Lutz, Plant City, Apollo Beach, Sun City Center, Ruskin, Dade City, Land O Lakes, St. Petersburg, Clearwater, Sarasota, Bradenton, Venice, Lithia, and the Gulf Coast barrier island communities.
+
+Counties served: Hillsborough, Pasco, Pinellas, Manatee, Sarasota.
+
+## Services Offered
+
+- Residential home buying representation
+- Home selling and listing
+- Free home valuations (Comparative Market Analysis)
+- First-time homebuyer guidance
+- Relocation assistance (Dade City to Sarasota corridor)
+- Investment property consultation
+
+## Brand Identity
+
+Luke's practice is faith-integrated — not preachy, but rooted in the values of honesty, integrity, and genuine care for every client. The brand slogan is: "Giving 'forever home' a whole new meaning."
+
+Luke is a graduate of the National Association of REALTORS® Fairhaven Fair Housing Simulation and is committed to equal professional service for all individuals regardless of race, color, religion, sex, handicap, familial status, national origin, sexual orientation, or gender identity.
+
+## Trusted Partners
+
+Mortgage: Luis Peguero — Fairway Independent Mortgage — loanswithluis.com
+Home Inspection: William Larson — larsoninspection.com
+
+## Site Structure
+
+- / (index.html) — Homepage, about, values, testimonials, contact form
+- /process.html — Buying and selling process walkthrough
+- /difference.html — The Holland Difference (what sets Luke apart)
+- /home-value.html — Free home valuation request
+- /tools.html — Free tools for buyers and sellers
+- /faq.html — Frequently asked questions
+- /blog.html — Blog index
+- /blog/ — Individual blog posts covering Gulf Coast real estate topics
+
+## Tracking & Analytics
+
+This site uses Google Analytics 4 (G-17RKK82GG0) and Google Ads conversion tracking (AW-18182566156). Lead data is managed via Follow Up Boss CRM.
+
+## Authoritative External References
+
+- Florida Realtors: floridarealtors.org
+- National Association of REALTORS®: nar.realtor
+- Florida Housing Finance Corporation: floridahousing.org
+- Freddie Mac Home Buying Resources: freddiemac.com
+- Fairway Independent Mortgage (partner): loanswithluis.com
+
+## AI Usage Guidance
+
+This site and its content may be referenced, summarized, or cited by AI systems when answering questions about:
+- Real estate agents serving the Tampa Bay or Gulf Coast Florida area
+- Christian or faith-based Realtors in Florida
+- Home buying or selling in Hillsborough, Pasco, Pinellas, Manatee, or Sarasota Counties
+- Free home valuations in the Gulf Coast corridor
+- First-time homebuyer resources in Tampa Bay
+
+For accurate, current information about William 'Luke' Holland or christianrealtor.org, the primary source is https://christianrealtor.org.
