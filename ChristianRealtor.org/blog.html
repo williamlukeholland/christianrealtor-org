@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tampa Bay Real Estate Blog | Market Updates & Home Buying Tips | William Luke Holland</title>
+<title>Gulf Coast Real Estate Learning Center | Market Updates & Home Buying Tips | William Luke Holland</title>
 <meta name="description" content="Gulf Coast real estate market updates, home buying tips, seller guides and neighborhood spotlights from William Luke Holland — serving Dade City to Sarasota including Tampa, St. Pete, Clearwater, Bradenton and all beach communities.">
 <meta property="og:title" content="Tampa Bay Real Estate Blog | William Luke Holland">
 <meta property="og:description" content="Market updates, home buying tips and local insights for Tampa Bay buyers and sellers.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://christianrealtor.org/blog.html">
-<meta property="og:image" content="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80&fm=jpg&fit=crop">
+<meta property="og:image" content="https://christianrealtor.org/images/bayshore-blvd-drone-poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://christianrealtor.org/blog.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -57,8 +57,27 @@ window.widgetTracker("send", "pageview");
   .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
   .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
   .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-  .nav-cta { background: var(--gold); color: var(--white); padding: 0.45rem 1.1rem; border-radius: 2px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
+  .nav-cta { background: var(--gold); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 2px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
   .nav-cta:hover { background: var(--gold-light); }
+  /* NAV DROPDOWN */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
+  .nav-dropdown > a::after { content: "▾"; font-size: 0.6rem; opacity: 0.7; transition: transform 0.2s; }
+  .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+  .nav-dropdown-menu {
+  display: none; position: absolute; top: calc(100% + 0.25rem); left: 50%; transform: translateX(-50%);
+  background: #3D1520; border: 1px solid rgba(206,184,136,0.2); border-radius: 2px;
+  min-width: 180px; padding: 0.5rem 0; z-index: 200;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+  .nav-dropdown::after {
+  content: ""; position: absolute; top: 100%; left: 0; right: 0;
+  height: 0.5rem; background: transparent;
+  }
+  .nav-dropdown:hover::after { display: block; }
+  .nav-dropdown-menu a { display: block; padding: 0.6rem 1.25rem; color: rgba(255,255,255,0.75); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+  .nav-dropdown-menu a:hover { color: var(--gold); background: rgba(206,184,136,0.08); }
 
   #page-hero { background: var(--navy); padding: 8rem 4rem 4rem; position: relative; overflow: hidden; }
   .hero-cross-bg { position: absolute; right: -4rem; top: 50%; transform: translateY(-50%); width: 420px; height: 420px; opacity: 0.045; pointer-events: none; }
@@ -161,34 +180,39 @@ window.widgetTracker("send", "pageview");
 <body>
 
 <nav>
-  <a href="index.html#home" class="nav-logo">
-    <span class="cross"><svg class="cross-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="10.5" y="2" width="3" height="20" rx="1"/><rect x="3" y="8" width="18" height="3" rx="1"/></svg></span>
-    <span>William 'Luke' Holland | Realtor</span>
-  </a>
-  <button class="hamburger" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
-  <ul class="nav-links">
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#testimonials">Reviews</a></li>
-    <li><a href="process.html">Buy &amp; Sell</a></li>
-    <li><a href="difference.html">Why Us</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="tools.html">Tools</a></li>
-    <li><a href="home-value.html">Home Value</a></li>
-  </ul>
-  <a href="index.html#contact" class="nav-cta">Get in Touch</a>
+<a href="index.html" class="nav-logo">
+<span class="cross"><svg class="cross-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="10.5" y="2" width="3" height="20" rx="1"/><rect x="3" y="8" width="18" height="3" rx="1"/></svg></span>
+<span>William 'Luke' Holland | Realtor</span>
+</a>
+<button class="hamburger" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="buying.html">Buy</a></li>
+<li><a href="selling.html">Sell</a></li>
+<li><a href="home-value.html">Home Value</a></li>
+<li><a href="areas.html">Areas</a></li>
+<li class="nav-dropdown">
+<a href="#">Resources</a>
+<div class="nav-dropdown-menu">
+<a href="new-construction.html">New Construction</a>
+<a href="tools.html">Tools</a>
+<a href="blog.html" class="active">Blog</a>
+</div>
+</li>
+</ul>
+<a href="index.html#contact" class="nav-cta">Contact</a>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
-    <a href="index.html#about">About</a>
-    <a href="index.html#testimonials">Reviews</a>
-    <a href="process.html">Buy &amp; Sell</a>
-    <a href="difference.html">Why Us</a>
-    <a href="blog.html">Blog</a>
-    <a href="faq.html">FAQ</a>
-    <a href="tools.html">Tools</a>
-  <a href="home-value.html">Home Value</a>
-  <a href="index.html#contact" class="mobile-cta">Get in Touch</a>
+<button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+<a href="index.html">Home</a>
+<a href="buying.html">Buy</a>
+<a href="selling.html">Sell</a>
+<a href="home-value.html">Home Value</a>
+<a href="areas.html">Areas</a>
+<a href="new-construction.html">New Construction</a>
+<a href="tools.html">Tools</a>
+<a href="blog.html" class="active">Blog</a>
+<a href="index.html#contact" class="mobile-cta">Contact</a>
 </div>
 
 <script>
@@ -224,7 +248,7 @@ window.widgetTracker("send", "pageview");
   <div class="hero-cross-bg"></div>
   <div class="page-hero-inner">
     <div class="hero-eyebrow"><div class="line"></div><span>Local Insights</span></div>
-    <h1>Gulf Coast Real Estate <em>Blog</em></h1>
+    <h1>Gulf Coast Real Estate <em>Learning Center</em></h1>
     <p>Market updates, home buying tips, seller guides and neighborhood spotlights — written for Gulf Coast families from Dade City to Sarasota by a Realtor who actually lives here.</p>
   </div>
 </section>
@@ -238,7 +262,7 @@ window.widgetTracker("send", "pageview");
 
         <!-- Post 1 -->
         <article class="blog-card">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&fm=jpg&fit=crop" alt="Tampa Bay Florida home market update June 2026">
+          <img class="blog-card-img" src="images/bayshore-blvd-drone-poster.jpg" alt="Tampa Bay Florida home market update June 2026">
           <div class="blog-card-body">
             <span class="blog-tag">Market Update</span>
             <h2><a href="blog/tampa-bay-market-update-june-2026.html">Tampa Bay Real Estate Market Update — June 2026</a></h2>
@@ -251,7 +275,7 @@ window.widgetTracker("send", "pageview");
 
         <!-- Post 2 -->
         <article class="blog-card">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80&fm=jpg&fit=crop" alt="First time home buyer guide Tampa Bay Florida">
+          <img class="blog-card-img" src="images/Florida-sunset-william-luke-holland.jpeg" alt="First time home buyer guide Tampa Bay Florida">
           <div class="blog-card-body">
             <span class="blog-tag">Buying</span>
             <h2><a href="blog/first-time-home-buyer-guide-tampa-bay.html">The First-Time Home Buyer's Complete Guide to Tampa Bay</a></h2>
@@ -264,7 +288,7 @@ window.widgetTracker("send", "pageview");
 
         <!-- Post 3 -->
         <article class="blog-card">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80&fm=jpg&fit=crop" alt="Brandon Florida neighborhood real estate guide">
+          <img class="blog-card-img" src="images/residential-pools-Brandon-Florida-real-estate-william-luke-holland.jpeg" alt="Brandon Florida neighborhood real estate guide">
           <div class="blog-card-body">
             <span class="blog-tag">Neighborhood Spotlight</span>
             <h2><a href="blog/living-in-brandon-florida.html">Living in Brandon, Florida — What to Know Before You Move</a></h2>
@@ -278,7 +302,7 @@ window.widgetTracker("send", "pageview");
 
         <!-- Post 4 -->
         <article class="blog-card">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80&fm=jpg&fit=crop" alt="What is my home worth Tampa Bay Gulf Coast Florida">
+          <img class="blog-card-img" src="images/edition-tampa-william-luke-holland.jpeg" alt="What is my home worth Tampa Bay Gulf Coast Florida">
           <div class="blog-card-body">
             <span class="blog-tag">Seller Education</span>
             <h2><a href="blog/how-to-know-what-your-home-is-worth-tampa-bay.html">How to Know What Your Home Is Worth in Tampa Bay's Gulf Coast Market</a></h2>
@@ -308,7 +332,8 @@ window.widgetTracker("send", "pageview");
         <div class="sidebar-card">
           <h3>Helpful Pages</h3>
           <ul>
-            <li><a href="process.html">→ How Buying &amp; Selling Works</a></li>
+            <li><a href="buying.html">→ How Buying Works</a></li>
+            <li><a href="selling.html">→ How Selling Works</a></li>
             <li><a href="difference.html">→ Why Choose Us</a></li>
             <li><a href="faq.html">→ Real Estate FAQ</a></li>
           </ul>
@@ -352,15 +377,14 @@ window.widgetTracker("send", "pageview");
     <div class="footer-tagline">Serving Dade City to Sarasota &amp; the Gulf Coast Beaches</div>
   </div>
   <ul class="footer-links">
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#testimonials">Reviews</a></li>
-    <li><a href="process.html">Buy &amp; Sell</a></li>
-    <li><a href="difference.html">Why Us</a></li>
-    <li><a href="blog.html">Blog</a></li>
+    <li><a href="difference.html">Our Values</a></li>
+    <li><a href="index.html#testimonials">Testimonials</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="difference.html">The Holland Difference</a></li>
     <li><a href="faq.html">FAQ</a></li>
-    <li><a href="tools.html">Tools</a></li>
     <li><a href="privacy.html">Privacy Policy</a></li>
     <li><a href="https://www.instagram.com/williamlukeholland/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.tiktok.com/@williamlukeholland" target="_blank" rel="noopener">TikTok</a></li>
   </ul>
   <div style="text-align: right;">
     <div class="footer-copy">© 2026 William Luke Holland LLC · christianrealtor.org</div>
