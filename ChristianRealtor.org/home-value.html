@@ -9,11 +9,11 @@
 <meta property="og:title" content="What's My Home Worth? | William 'Luke' Holland, Gulf Coast Realtor">
 <meta property="og:description" content="Get a free, personalized home valuation from a licensed Gulf Coast Realtor, not an algorithm. Serving Hillsborough, Pasco, Pinellas, Manatee and Sarasota Counties from Dade City to Sarasota.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://christianrealtor.org/home-value.html">
+<meta property="og:url" content="https://christianrealtor.org/home-value">
 <meta property="og:image" content="https://christianrealtor.org/images/residential-pools-Brandon-Florida-real-estate-william-luke-holland.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://christianrealtor.org/images/residential-pools-Brandon-Florida-real-estate-william-luke-holland.jpeg">
-<link rel="canonical" href="https://christianrealtor.org/home-value.html">
+<link rel="canonical" href="https://christianrealtor.org/home-value">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script type="application/ld+json">
 {
@@ -521,6 +521,8 @@
       <form id="cma-form" action="https://formspree.io/f/xwvjrozl" method="POST">
         <input type="hidden" name="_subject" value="New Home Valuation Request - christianrealtor.org">
         <input type="hidden" name="lead_source" value="Home Value Page">
+        <!-- Honeypot: hidden from real users, bots fill this and get silently rejected -->
+        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
         <div class="form-group">
           <label for="hv-address">Property Address *</label>
           <input type="text" id="hv-address" name="property_address" placeholder="123 Gulf View Drive, Brandon FL 33511" required>
@@ -588,6 +590,22 @@
 
           form.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Honeypot check — bots fill this, humans don't
+            var honeypot = form.querySelector('input[name="_gotcha"]');
+            if (honeypot && honeypot.value) { return; }
+
+            // Phone length validation — require exactly 10 digits
+            var phoneRaw = (form.querySelector('#hv-phone').value || '').replace(/\D/g, '');
+            if (phoneRaw.length !== 10) {
+              status.style.display = 'block';
+              status.style.background = '#fff5f5';
+              status.style.color = '#c53030';
+              status.style.border = '1px solid #fc8181';
+              status.textContent = 'Please enter a 10-digit phone number, including area code.';
+              return;
+            }
+
             btn.disabled = true;
             btn.textContent = 'Sending...';
             var data = new FormData(form);

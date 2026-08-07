@@ -489,7 +489,7 @@ window.widgetTracker("send", "pageview");
         <div class="cred"><div class="dot"></div><span>5-Star Google Rating</span></div>
       </div>
       <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="#contact" class="btn-primary">Let's Connect</a>
+        <a href="tel:8134371742" class="btn-primary">Call Luke</a>
         <a href="https://christianrealtor.org/difference#meet-luke" style="display: inline-block; border: 1.5px solid var(--navy); color: var(--navy); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: border-color 0.2s, color 0.2s; font-weight: 700;">Read More About Us</a>
       </div>
     </div>
@@ -605,6 +605,8 @@ window.widgetTracker("send", "pageview");
     </div>
     <div>
       <form id="contact-form" class="contact-form" action="https://formspree.io/f/xwvjrozl" method="POST">
+        <!-- Honeypot: hidden from real users, bots fill this and get silently rejected -->
+        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label for="fname">First Name</label>
@@ -652,6 +654,19 @@ window.widgetTracker("send", "pageview");
         form.addEventListener('submit', function(e) {
           e.preventDefault();
           var status = document.getElementById('form-status');
+
+          // Honeypot check — bots fill this, humans don't
+          var honeypot = form.querySelector('input[name="_gotcha"]');
+          if (honeypot && honeypot.value) { return; }
+
+          // Phone length validation — require exactly 10 digits
+          var phoneRaw = (form.querySelector('#phone').value || '').replace(/\D/g, '');
+          if (phoneRaw.length !== 10) {
+            status.style.color = '#c53030';
+            status.textContent = 'Please enter a 10-digit phone number, including area code.';
+            return;
+          }
+
           var data = new FormData(form);
 
           // Build a plain object for the Follow Up Boss function
