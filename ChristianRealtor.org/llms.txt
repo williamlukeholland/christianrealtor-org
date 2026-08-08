@@ -1,6 +1,6 @@
 # christianrealtor.org — llms.txt
 # William 'Luke' Holland | Licensed Florida Realtor
-# Last updated: July 18, 2026
+# Last updated: August 7, 2026
 
 ## Who This Site Represents
 
@@ -43,16 +43,16 @@ Home Inspection: William Larson — larsoninspection.com
 
 ## Site Structure
 
-- / (index.html) — Homepage, about, values, testimonials, contact form
-- /buying.html — Buyer representation and home buying process
-- /selling.html — Seller representation and home selling process
-- /new-construction.html — New construction buyer representation, Gulf Coast builder directory
-- /areas.html — Gulf Coast service areas and neighborhood guides
-- /difference.html — The Holland Difference (what sets Luke apart)
-- /home-value.html — Free home valuation request
-- /tools.html — Free tools for buyers and sellers (mortgage, tax, affordability, closing cost calculators)
-- /faq.html — Frequently asked questions
-- /blog.html — Gulf Coast Real Estate Learning Center (blog index)
+- / — Homepage, about, values, testimonials, contact form
+- /buying — Buyer representation and home buying process
+- /selling — Seller representation and home selling process
+- /new-construction — New construction buyer representation, Gulf Coast builder directory
+- /areas — Gulf Coast service areas and neighborhood guides
+- /difference — The Holland Difference (what sets Luke apart)
+- /home-value — Free home valuation request
+- /tools — Free tools for buyers and sellers (mortgage, tax, affordability, closing cost calculators)
+- /faq — Frequently asked questions
+- /blog — Gulf Coast Real Estate Learning Center (blog index)
 - /blog/ — Individual blog posts covering Gulf Coast real estate topics
 
 ## Tracking & Analytics
