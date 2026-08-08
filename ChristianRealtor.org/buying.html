@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Buy a Home on Florida's Gulf Coast | William 'Luke' Holland</title>
-<meta name="description" content="A personal, step-by-step guide to buying a home on Florida's Gulf Coast. From your first conversation to closing day, William 'Luke' Holland walks with you every step of the way.">
+<title>Get a Free Personalized Home List | Buying on Florida's Gulf Coast | William 'Luke' Holland</title>
+<meta name="description" content="Tell Luke what you're looking for and get a personalized list of Gulf Coast homes matched to your priorities. Resale, new construction, and neighborhoods you may have overlooked. 100% free to request.">
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="Buying a Home on Florida's Gulf Coast | William 'Luke' Holland">
-<meta property="og:description" content="Real estate doesn't have to feel overwhelming. Luke makes the buying process personal, clear, and built around what you actually need — from Dade City to Sarasota.">
+<meta property="og:title" content="Get a Free Personalized Home List | Gulf Coast Florida | William 'Luke' Holland">
+<meta property="og:description" content="Tell Luke what you're looking for and receive a personalized list of Gulf Coast homes matched to your criteria: resale, new construction, and opportunities you may have missed. Free to request.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://christianrealtor.org/buying">
 <meta property="og:image" content="https://christianrealtor.org/images/residential-pools-Brandon-Florida-real-estate-william-luke-holland.jpeg">
@@ -62,7 +62,7 @@
       "name": "What should I know about HOA and CDD fees in Florida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both affect your true monthly cost of ownership and are worth understanding before you fall in love with a community. HOA fees cover shared amenity maintenance and community rules. CDD fees are a separate line item on your property tax bill that fund infrastructure bonds in master-planned communities — they do not go away when the community is built out, and they vary significantly from one neighborhood to the next. Luke walks every buyer through these numbers before submitting any offer."
+        "text": "Both affect your true monthly cost of ownership and are worth understanding before you fall in love with a community. HOA fees cover shared amenity maintenance and community rules. CDD fees are a separate line item on your property tax bill that fund infrastructure bonds in master-planned communities. They do not go away when the community is built out, and they vary significantly from one neighborhood to the next. Luke walks every buyer through these numbers before submitting any offer."
       }
     },
     {
@@ -298,13 +298,25 @@ footer { background: #3D1520; padding: 2.5rem 4rem; display: flex; justify-conte
 .footer-links a:hover { color: var(--gold); }
 .footer-copy { color: rgba(255,255,255,0.3); font-size: 0.72rem; }
 
+/* WEALTH SECTION */
+#wealth { background: var(--cream); padding: 5rem 4rem; }
+.wealth-inner { max-width: 900px; margin: 0 auto; }
+.wealth-intro { max-width: 620px; margin-bottom: 3rem; }
+.wealth-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.wealth-card { background: var(--white); border-radius: 2px; padding: 1.75rem; border-top: 3px solid var(--gold); }
+.wealth-card .wc-icon { font-size: 1.4rem; color: var(--gold); margin-bottom: 0.85rem; line-height: 1; }
+.wealth-card h3 { font-family: "Playfair Display", serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.5rem; font-weight: 600; line-height: 1.3; }
+.wealth-card p { font-size: 0.875rem; color: var(--slate); line-height: 1.75; }
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links, .nav-cta { display: none; }
   #page-hero { padding: 7rem 1.5rem 3.5rem; }
-  #intro, #process, #lender, #new-construction-callout, #faq { padding: 3.5rem 1.5rem; }
+  #intro, #process, #lender, #new-construction-callout, #faq, #wealth { padding: 3.5rem 1.5rem; }
+  .wealth-grid { grid-template-columns: 1fr; gap: 1rem; }
   .intro-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
   .lender-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .nc-box { grid-template-columns: 1fr; gap: 1.5rem; }
   .cta-band { padding: 3rem 1.5rem; }
@@ -315,6 +327,70 @@ footer { background: #3D1520; padding: 2.5rem 4rem; display: flex; justify-conte
 }
 @media (max-width: 600px) {
   .nc-box { padding: 2rem 1.5rem; }
+}
+
+/* LEAD FORM SECTION */
+#home-list-form { background: var(--cream); padding: 5rem 4rem; }
+.form-section-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 5fr 4fr; gap: 4.5rem; align-items: start; }
+.form-section-text .section-title { margin-bottom: 1rem; }
+.form-section-text p { color: var(--slate); font-size: 1rem; line-height: 1.85; margin-bottom: 1rem; }
+.form-value-list { list-style: none; margin: 1.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.form-value-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.92rem; color: var(--slate); }
+.form-value-list li::before { content: "&#x2726;"; color: var(--gold); font-size: 0.65rem; margin-top: 0.35rem; flex-shrink: 0; }
+.buyer-form { background: var(--white); border-radius: 2px; padding: 2.25rem; border: 1px solid #E2D9C8; }
+.buyer-form h3 { font-family: "Playfair Display", serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.35rem; font-weight: 600; }
+.buyer-form .form-sub { font-size: 0.82rem; color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6; }
+.form-field { margin-bottom: 1rem; }
+.form-field label { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 0.4rem; }
+.form-field input, .form-field select, .form-field textarea {
+  width: 100%; padding: 0.65rem 0.85rem; border: 1px solid #D1C8B8;
+  border-radius: 2px; font-family: "Lato", sans-serif; font-size: 0.9rem;
+  color: var(--text-dark); background: #FDFAF5; transition: border-color 0.2s;
+  appearance: none; -webkit-appearance: none;
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--gold); }
+.form-field textarea { resize: vertical; min-height: 80px; }
+.form-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.form-checkboxes { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem 0.75rem; margin-top: 0.25rem; }
+.form-checkbox { display: flex; align-items: center; gap: 0.45rem; cursor: pointer; }
+.form-checkbox input[type="checkbox"] { width: auto; padding: 0; margin: 0; accent-color: var(--navy); cursor: pointer; }
+.form-checkbox span { font-size: 0.82rem; color: var(--slate); line-height: 1.3; }
+.form-submit-wrap { margin-top: 1.25rem; }
+.form-submit-btn {
+  width: 100%; background: var(--navy); color: var(--white);
+  border: none; padding: 0.95rem 1.5rem; border-radius: 2px;
+  font-family: "Lato", sans-serif; font-size: 0.875rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+  transition: background 0.2s;
+}
+.form-submit-btn:hover { background: var(--navy-light); }
+.form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.form-disclaimer { font-size: 0.72rem; color: var(--text-light); line-height: 1.55; margin-top: 0.85rem; }
+.form-success { display: none; text-align: center; padding: 2rem 1rem; }
+.form-success .success-icon { font-size: 2rem; color: var(--gold); margin-bottom: 0.75rem; }
+.form-success h4 { font-family: "Playfair Display", serif; color: var(--navy); font-size: 1.2rem; margin-bottom: 0.5rem; }
+.form-success p { font-size: 0.9rem; color: var(--slate); line-height: 1.7; }
+.form-error { display: none; background: #FEF2F2; border: 1px solid #FECACA; border-radius: 2px; padding: 0.75rem 1rem; font-size: 0.85rem; color: #B91C1C; margin-top: 0.75rem; }
+/* Honeypot: visually and assistively hidden, but not display:none so bots fill it */
+.form-honeypot { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; tab-index: -1; }
+.form-field-phone-wrap { position: relative; }
+.phone-status { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); font-size: 0.85rem; line-height: 1; pointer-events: none; }
+.phone-inline-error { display: none; font-size: 0.75rem; color: #B91C1C; margin-top: 0.3rem; }
+
+/* TRUST BAR */
+#trust-bar { background: var(--navy); padding: 2.25rem 4rem; }
+.trust-bar-inner { max-width: 900px; margin: 0 auto; display: flex; gap: 2rem; align-items: center; justify-content: space-around; flex-wrap: wrap; }
+.trust-item { text-align: center; }
+.trust-item .trust-num { font-family: "Playfair Display", serif; font-size: 1.8rem; color: var(--gold); font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+.trust-item .trust-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.trust-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); }
+
+@media (max-width: 900px) {
+  #home-list-form { padding: 3.5rem 1.5rem; }
+  .form-section-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .form-field-row { grid-template-columns: 1fr; }
+  #trust-bar { padding: 2rem 1.5rem; }
+  .trust-divider { display: none; }
 }
 </style>
 </head>
@@ -392,11 +468,157 @@ footer { background: #3D1520; padding: 2.5rem 4rem; display: flex; justify-conte
       <div class="line"></div>
       <span>Buying a Home | Gulf Coast Florida</span>
     </div>
-    <h1>Finding the Right Home<br>Starts with the <em>Right Relationship.</em></h1>
-    <p>Buying a home is one of the biggest decisions you will make. It should feel like something you did with someone who cared, not something you survived. Luke walks alongside you from the very first conversation through closing day and beyond.</p>
+    <h1>Tell Luke What You Want.<br>Get a <em>Personalized Home List.</em></h1>
+    <p>You share your priorities. Luke personally reviews your criteria and sends you Gulf Coast homes that actually match: resale, new construction, and neighborhoods you may not have considered yet. No obligation. No pressure. Just a curated list built around your life.</p>
     <div class="hero-cta-pair">
-      <a href="/#contact" class="btn-primary">Start a Conversation</a>
+      <a href="#home-list-form" class="btn-primary">Get My Free Home List</a>
       <a href="new-construction" class="btn-outline-white">Buying New Construction?</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div id="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="trust-num">Gulf Coast</div>
+      <div class="trust-label">Dade City to Sarasota</div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-num">Resale + New</div>
+      <div class="trust-label">Every property type</div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-num">No Cost to You</div>
+      <div class="trust-label">Free to receive your list</div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-num">Personally Reviewed</div>
+      <div class="trust-label">Luke, not an algorithm</div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSONALIZED HOME LIST FORM -->
+<section id="home-list-form">
+  <div class="form-section-inner">
+    <div class="form-section-text">
+      <div class="section-eyebrow">
+        <div class="line"></div>
+        <span>Your Free Personalized Home List</span>
+      </div>
+      <h2 class="section-title">Tell Luke What You're<br><em>Looking For.</em></h2>
+      <p>Most search tools filter by bedrooms and price. Luke goes further. Share your priorities and he personally reviews your criteria, then sends you homes that actually fit your life: resale listings, new construction options, and neighborhoods that match your goals but may not be on your radar yet.</p>
+      <p>There's no algorithm involved. Luke reads every request himself.</p>
+      <ul class="form-value-list">
+        <li>Curated from active MLS listings and new construction communities</li>
+        <li>Includes neighborhoods Luke recommends based on your criteria</li>
+        <li>Covers resale homes, new builds, and off-the-beaten-path options</li>
+        <li>Locally informed. Luke knows these markets from years on the ground</li>
+        <li>100% free. No obligation to work with Luke or anyone else.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="buyer-form" id="buyer-form-wrap">
+        <h3>Get Your Personalized Home List</h3>
+        <p class="form-sub">100% free. No obligation. Luke personally reviews every request.</p>
+        <form id="buyer-lead-form" novalidate>
+          <!-- Honeypot: off-screen, not display:none, so bots fill it -->
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="blf-website">Website</label>
+            <input type="text" id="blf-website" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <!-- Load timestamp for bot timing detection -->
+          <input type="hidden" id="blf-loaded-at" name="_loaded_at" value="">
+          <div class="form-field-row">
+            <div class="form-field">
+              <label for="blf-name">Name *</label>
+              <input type="text" id="blf-name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-field">
+              <label for="blf-phone">Phone *</label>
+              <div class="form-field-phone-wrap">
+                <input type="tel" id="blf-phone" name="phone" placeholder="(813) 555-0100" required autocomplete="tel" maxlength="14">
+                <span class="phone-status" id="blf-phone-status" aria-live="polite"></span>
+              </div>
+              <div class="phone-inline-error" id="blf-phone-inline">Please enter all 10 digits.</div>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="blf-email">Email *</label>
+            <input type="email" id="blf-email" name="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-field">
+            <label for="blf-area">Preferred Area(s) *</label>
+            <input type="text" id="blf-area" name="preferred_area" placeholder="e.g. Wesley Chapel, Riverview, or I'm flexible" required>
+          </div>
+          <div class="form-field">
+            <label for="blf-price">Price Range *</label>
+            <select id="blf-price" name="price_range" required>
+              <option value="" disabled selected>Select a range</option>
+              <option>Under $300,000</option>
+              <option>$300,000 - $400,000</option>
+              <option>$400,000 - $550,000</option>
+              <option>$550,000 - $750,000</option>
+              <option>$750,000 - $1,000,000</option>
+              <option>$1,000,000+</option>
+            </select>
+          </div>
+          <div class="form-field-row">
+            <div class="form-field">
+              <label for="blf-beds">Bedrooms</label>
+              <select id="blf-beds" name="bedrooms">
+                <option value="" selected>Any</option>
+                <option>2+</option>
+                <option>3+</option>
+                <option>4+</option>
+                <option>5+</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="blf-baths">Bathrooms</label>
+              <select id="blf-baths" name="bathrooms">
+                <option value="" selected>Any</option>
+                <option>1+</option>
+                <option>2+</option>
+                <option>3+</option>
+                <option>4+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>What Matters Most? (select all that apply)</label>
+            <div class="form-checkboxes">
+              <label class="form-checkbox"><input type="checkbox" name="priorities" value="New Construction"><span>New Construction</span></label>
+              <label class="form-checkbox"><input type="checkbox" name="priorities" value="Commute"><span>Commute</span></label>
+              <label class="form-checkbox"><input type="checkbox" name="priorities" value="Larger Lot"><span>Larger Lot</span></label>
+              <label class="form-checkbox"><input type="checkbox" name="priorities" value="More Space"><span>More Space</span></label>
+              <label class="form-checkbox"><input type="checkbox" name="priorities" value="Amenities"><span>Amenities</span></label>
+              <label class="form-checkbox"><input type="checkbox" name="priorities" value="Low/No HOA or CDD"><span>Low/No HOA or CDD</span></label>
+              <label class="form-checkbox"><input type="checkbox" name="priorities" value="Investment Potential"><span>Investment Potential</span></label>
+              <label class="form-checkbox"><input type="checkbox" name="priorities" value="Walkability"><span>Walkability</span></label>
+              <label class="form-checkbox"><input type="checkbox" name="priorities" value="Luxury Finishes"><span>Luxury Finishes</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="blf-notes">Anything Else Luke Should Know?</label>
+            <textarea id="blf-notes" name="message" placeholder="Timeline, must-haves, deal-breakers, current situation, anything helpful"></textarea>
+          </div>
+          <div class="form-submit-wrap">
+            <button type="submit" class="form-submit-btn" id="blf-submit-btn">Send Me My Free Home List</button>
+          </div>
+          <div class="form-error" id="blf-error">Something went wrong. Please try again or call us at (813) 437-1742.</div>
+          <p class="form-disclaimer">By submitting this form you agree to receive calls and texts from William Luke Holland LLC at the number provided. Reply STOP to opt out. Your information will never be shared or sold.</p>
+        </form>
+        <div class="form-success" id="blf-success">
+          <div class="success-icon">&#x2726;</div>
+          <h4>You're on Luke's list.</h4>
+          <p>He'll personally review your criteria and reach out with homes that match. Keep an eye on your phone and inbox.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -407,25 +629,25 @@ footer { background: #3D1520; padding: 2.5rem 4rem; display: flex; justify-conte
     <div class="intro-text">
       <div class="section-eyebrow">
         <div class="line"></div>
-        <span>The Luke Difference</span>
+        <span>The Holland Difference</span>
       </div>
-      <h2 class="section-title">This Isn't a Transaction.<br><em>It's a Partnership.</em></h2>
-      <p>Most buyers come to Luke with a zip code and a price range. What he actually wants to know is what your day looks like, where your kids go to school, how long you're willing to commute, and what home means to you. That conversation shapes everything that follows.</p>
-      <p>Luke does not send you a Zillow link and wait for a call back. He builds a customized search strategy around your specific needs, your timeline, and the things you haven't thought to mention yet but will matter. When something comes on the market that fits, you hear about it quickly. When something looks right but has a problem, he tells you before you fall in love with it.</p>
-      <p>His goal is not to close a deal. It's to help you make a decision you will feel good about five years from now. That means being honest when a home isn't right for you, even if it's the one you want most in the moment.</p>
+      <h2 class="section-title">More Than a Purchase.<br><em>A Position Worth Building.</em></h2>
+      <p>Real estate on Florida's Gulf Coast isn't just a place to live. For most buyers it is the single largest wealth-building move they will make. Luke approaches every purchase with that in mind. Whether you are buying your first home, relocating, upgrading, or strategically adding to your portfolio, the neighborhood you choose, the price you pay, and the terms you negotiate will shape your financial position for years.</p>
+      <p>Luke does not send you a Zillow link and wait for a call back. He builds a search strategy around your actual criteria, your timeline, and the things that don't show up in a filter. When something worth your attention comes on the market, you hear about it. When something looks right but carries risk, he tells you before you're under contract.</p>
+      <p>His goal is not to close a deal. It is to help you make a decision you will feel good about five years from now, one that serves your life and builds equity along the way.</p>
     </div>
     <div class="intro-cards">
       <div class="intro-card">
-        <h3>A Personalized Consultation First</h3>
-        <p>Before you see a single listing, Luke sits down with you to understand your life, your goals, and your non-negotiables. That conversation drives every recommendation that follows.</p>
+        <h3>You Define the Priorities</h3>
+        <p>Lifestyle, location, long-term value: whatever drives your decision, Luke builds around it. No generic search alerts. A curated list based on what you actually told him.</p>
       </div>
       <div class="intro-card">
-        <h3>Suggestions Built Around You</h3>
-        <p>No generic search alerts. Luke curates recommendations based on what he learns about you, including things the MLS can't filter for, like commute feel, school zone reputation, and neighborhood trajectory.</p>
+        <h3>Locally Informed, Not Algorithm-Driven</h3>
+        <p>Luke knows which neighborhoods are appreciating, which communities carry heavy CDD exposure, and which builder contracts have terms worth pushing back on. That knowledge is yours from the first conversation.</p>
       </div>
       <div class="intro-card">
-        <h3>A Relationship That Outlasts Closing</h3>
-        <p>Luke's clients call him years later with contractor questions, refinancing thoughts, and neighbors who want to sell. That's the relationship he's building from the first conversation.</p>
+        <h3>Built for the Long Term</h3>
+        <p>Clients call Luke years after closing with refinancing questions, investment thoughts, and neighbors ready to sell. The right purchase is the beginning of a position, not just a transaction.</p>
       </div>
     </div>
   </div>
@@ -447,9 +669,9 @@ footer { background: #3D1520; padding: 2.5rem 4rem; display: flex; justify-conte
       <div class="step-item">
         <div class="step-num">1</div>
         <div class="step-content">
-          <h3>The First Conversation</h3>
-          <p>Before anything else, Luke wants to understand you. Where are you coming from, where do you want to go, and what does the right home actually look like for your life? This isn't a sales call. It's a real conversation that shapes everything that follows.</p>
-          <p>There's no pressure, no pitch, and no obligation. Just an honest exchange so Luke knows whether and how he can help.</p>
+          <h3>Share What You're Looking For</h3>
+          <p>The process starts when you tell Luke your priorities: area, price range, must-haves, and what matters most. Luke reviews your criteria personally and sends you a curated list of Gulf Coast homes worth considering, including resale listings, new construction options, and neighborhoods you may not have considered yet.</p>
+          <p>No pressure, no pitch, no obligation. Just a locally informed starting point built around your life. <a href="#home-list-form" style="color: var(--navy); font-weight: 700; text-decoration: underline; text-underline-offset: 2px;">Request your free home list</a> to get started.</p>
         </div>
       </div>
 
@@ -517,6 +739,37 @@ footer { background: #3D1520; padding: 2.5rem 4rem; display: flex; justify-conte
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- REAL ESTATE AS WEALTH -->
+<section id="wealth">
+  <div class="wealth-inner">
+    <div class="wealth-intro">
+      <div class="section-eyebrow">
+        <div class="line"></div>
+        <span>Buying Smart on the Gulf Coast</span>
+      </div>
+      <h2 class="section-title">A Home Is an Asset.<br><em>Buy It Like One.</em></h2>
+      <p class="section-subtitle">Florida real estate has consistently rewarded buyers who chose the right market, the right neighborhood, and the right terms. Luke helps you think through the purchase not just for today, but for what it means to your financial position over time.</p>
+    </div>
+    <div class="wealth-grid">
+      <div class="wealth-card">
+        <div class="wc-icon">&#x25CA;</div>
+        <h3>Equity Starts at the Negotiating Table</h3>
+        <p>Overpaying by $20,000 is not recovered at closing. Luke pulls comparable sales, reads neighborhood trends, and helps you make a competitive offer that does not leave money on the table. Every dollar of equity you enter with is equity you keep.</p>
+      </div>
+      <div class="wealth-card">
+        <div class="wc-icon">&#x25CA;</div>
+        <h3>Neighborhood Trajectory Matters</h3>
+        <p>Two homes with the same price tag can have very different five-year outlooks. Luke knows which Gulf Coast communities are in growth corridors, which carry infrastructure or CDD exposure, and which are quietly outperforming comparable zip codes nearby.</p>
+      </div>
+      <div class="wealth-card">
+        <div class="wc-icon">&#x25CA;</div>
+        <h3>New Construction Has Real Financial Stakes</h3>
+        <p>Builder contracts, design center upgrades, and lot premiums add up fast. An independent buyer's agent reviewing those decisions before you sign can save you significantly more than the cost of representation. Luke has sat in those rooms many times.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -637,9 +890,9 @@ footer { background: #3D1520; padding: 2.5rem 4rem; display: flex; justify-conte
 
 <!-- CTA BAND -->
 <div class="cta-band">
-  <h2>Ready to Find Your Next Home?</h2>
-  <p>The first step is a conversation. No pressure, no pitch. Just an honest discussion about what you're looking for and how Luke can help you find it.</p>
-  <a href="/#contact" class="btn-primary">Start a Conversation</a>
+  <h2>Ready to See What's Out There?</h2>
+  <p>Tell Luke what you're looking for and he'll put together a personalized list of Gulf Coast homes that match your criteria: resale, new construction, and options you may not have considered yet. No obligation to move forward.</p>
+  <a href="#home-list-form" class="btn-primary">Get My Free Home List</a>
 </div>
 
 <!-- SCRIPTURE BAND -->
@@ -694,6 +947,185 @@ window.widgetTracker("send", "pageview");
       if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); }
     });
   }
+</script>
+
+<!-- BUYER LEAD FORM SUBMISSION -->
+<script>
+(function() {
+  var form = document.getElementById('buyer-lead-form');
+  var btn = document.getElementById('blf-submit-btn');
+  var successEl = document.getElementById('blf-success');
+  var errorEl = document.getElementById('blf-error');
+  var phoneInput = document.getElementById('blf-phone');
+  var phoneStatus = document.getElementById('blf-phone-status');
+  var phoneInlineError = document.getElementById('blf-phone-inline');
+  var loadedAtInput = document.getElementById('blf-loaded-at');
+  if (!form) return;
+
+  // Stamp load time for bot timing detection
+  var loadedAt = Date.now();
+  if (loadedAtInput) loadedAtInput.value = loadedAt;
+
+  // ---- PHONE: real-time formatting ----
+  function formatPhone(raw) {
+    var digits = raw.replace(/\D/g, '').slice(0, 10);
+    if (digits.length <= 3) return digits.length ? '(' + digits : '';
+    if (digits.length <= 6) return '(' + digits.slice(0,3) + ') ' + digits.slice(3);
+    return '(' + digits.slice(0,3) + ') ' + digits.slice(3,6) + '-' + digits.slice(6);
+  }
+
+  function phoneDigits(val) {
+    return val.replace(/\D/g, '');
+  }
+
+  function updatePhoneStatus(digits) {
+    if (!phoneStatus) return;
+    if (digits.length === 0) {
+      phoneStatus.textContent = '';
+      phoneInlineError.style.display = 'none';
+    } else if (digits.length < 10) {
+      phoneStatus.textContent = (10 - digits.length) + ' more';
+      phoneStatus.style.color = '#B91C1C';
+      phoneInlineError.style.display = 'none';
+    } else {
+      phoneStatus.textContent = '\u2714';
+      phoneStatus.style.color = '#2F855A';
+      phoneInlineError.style.display = 'none';
+    }
+  }
+
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function() {
+      var pos = phoneInput.selectionStart;
+      var raw = phoneInput.value;
+      var formatted = formatPhone(raw);
+      phoneInput.value = formatted;
+      // Adjust cursor: if user is typing forward, keep at end of new value
+      var newPos = formatted.length < pos ? formatted.length : pos + (formatted.length - raw.length);
+      try { phoneInput.setSelectionRange(newPos, newPos); } catch(e) {}
+      updatePhoneStatus(phoneDigits(formatted));
+    });
+
+    phoneInput.addEventListener('blur', function() {
+      var digits = phoneDigits(phoneInput.value);
+      if (digits.length > 0 && digits.length < 10) {
+        phoneInlineError.style.display = 'block';
+        phoneStatus.textContent = '';
+      }
+    });
+
+    phoneInput.addEventListener('focus', function() {
+      phoneInlineError.style.display = 'none';
+    });
+  }
+
+  // ---- SUBMIT ----
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    errorEl.style.display = 'none';
+
+    // Honeypot check (off-screen field: bots fill it, humans don't)
+    var honeypot = form.querySelector('input[name="_gotcha"]');
+    if (honeypot && honeypot.value) return;
+
+    // Timing check: reject submissions under 3 seconds (bot speed)
+    var elapsed = Date.now() - loadedAt;
+    if (elapsed < 3000) return;
+
+    // Required field validation
+    var name = form.querySelector('#blf-name').value.trim();
+    var email = form.querySelector('#blf-email').value.trim();
+    var phone = phoneInput ? phoneInput.value.trim() : '';
+    var area = form.querySelector('#blf-area').value.trim();
+    var price = form.querySelector('#blf-price').value;
+
+    if (!name || !email || !phone || !area || !price) {
+      errorEl.textContent = 'Please fill in all required fields.';
+      errorEl.style.display = 'block';
+      return;
+    }
+
+    // Phone: must be exactly 10 digits
+    var digits = phoneDigits(phone);
+    if (digits.length !== 10) {
+      phoneInlineError.style.display = 'block';
+      phoneInput.focus();
+      return;
+    }
+
+    // Collect checkbox priorities
+    var checked = form.querySelectorAll('input[name="priorities"]:checked');
+    var priorities = Array.from(checked).map(function(c) { return c.value; }).join(', ');
+
+    var message = form.querySelector('#blf-notes').value.trim();
+    var beds = form.querySelector('#blf-beds').value;
+    var baths = form.querySelector('#blf-baths').value;
+
+    var fullMessage = [
+      'Area: ' + area,
+      'Price Range: ' + price,
+      beds ? 'Bedrooms: ' + beds : '',
+      baths ? 'Bathrooms: ' + baths : '',
+      priorities ? 'Priorities: ' + priorities : '',
+      message ? 'Additional Notes: ' + message : ''
+    ].filter(Boolean).join('\n');
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    // Formspree submission
+    fetch('https://formspree.io/f/xwvjrozl', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: name, email: email, phone: phone,
+        message: fullMessage,
+        _subject: 'Personalized Home Search Request: ' + name
+      })
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.ok) {
+        // FUB lead push (silent failure: Formspree is the primary capture)
+        fetch('/.netlify/functions/submit-buyer-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            preferred_area: area,
+            price_range: price,
+            bedrooms: beds,
+            bathrooms: baths,
+            priorities: priorities,
+            message: message
+          })
+        }).catch(function() {});
+
+        // GA4 event
+        if (typeof gtag === 'function') {
+          gtag('event', 'personalized_home_search_request', {
+            event_category: 'Lead Form',
+            event_label: 'Buyer Home List Form'
+          });
+        }
+
+        // Show success state
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+      } else {
+        throw new Error('Formspree error');
+      }
+    })
+    .catch(function() {
+      errorEl.textContent = 'Something went wrong. Please try again or call (813) 437-1742.';
+      errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send Me My Free Home List';
+    });
+  });
+})();
 </script>
 
 <!-- FAQ ACCORDION -->
