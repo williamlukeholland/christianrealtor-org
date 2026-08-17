@@ -523,9 +523,15 @@
         <input type="hidden" name="lead_source" value="Home Value Page">
         <!-- Honeypot: hidden from real users, bots fill this and get silently rejected -->
         <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
-        <div class="form-group">
-          <label for="hv-address">Property Address *</label>
-          <input type="text" id="hv-address" name="property_address" placeholder="123 Gulf View Drive, Brandon FL 33511" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="hv-address">Property Address *</label>
+            <input type="text" id="hv-address" name="property_address" placeholder="123 Gulf View Drive" required>
+          </div>
+          <div class="form-group">
+            <label for="hv-zip">Zip Code *</label>
+            <input type="text" id="hv-zip" name="zip_code" placeholder="33511" maxlength="5" required>
+          </div>
         </div>
         <div class="form-row">
           <div class="form-group">
@@ -616,6 +622,7 @@
               email:            data.get('email') || '',
               phone:            data.get('phone') || '',
               property_address: data.get('property_address') || '',
+              zip_code:         data.get('zip_code') || '',
               bedrooms:         data.get('bedrooms') || '',
               bathrooms:        data.get('bathrooms') || '',
               timeline:         data.get('timeline') || '',
