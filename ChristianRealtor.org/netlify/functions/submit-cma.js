@@ -15,6 +15,7 @@ exports.handler = async function (event) {
       email        = "",
       phone        = "",
       property_address = "",
+      zip_code     = "",
       bedrooms     = "",
       bathrooms    = "",
       timeline     = "",
@@ -24,6 +25,7 @@ exports.handler = async function (event) {
     // Build a rich message FUB will display on the contact record
     let messageParts = ["📋 HOME VALUATION REQUEST — christianrealtor.org"];
     if (property_address) messageParts.push(`Property Address: ${property_address}`);
+    if (zip_code)         messageParts.push(`Zip Code: ${zip_code}`);
     if (bedrooms)         messageParts.push(`Bedrooms: ${bedrooms}`);
     if (bathrooms)        messageParts.push(`Bathrooms: ${bathrooms}`);
     if (timeline)         messageParts.push(`Selling Timeline: ${timeline}`);

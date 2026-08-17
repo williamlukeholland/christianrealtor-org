@@ -17,6 +17,7 @@ exports.handler = async function (event) {
       price_range  = "",
       bedrooms     = "",
       bathrooms    = "",
+      timeline     = "",
       priorities   = "",
       message      = "",
     } = data;
@@ -32,6 +33,7 @@ exports.handler = async function (event) {
     if (price_range)    messageParts.push(`Price Range: ${price_range}`);
     if (bedrooms)       messageParts.push(`Bedrooms: ${bedrooms}`);
     if (bathrooms)      messageParts.push(`Bathrooms: ${bathrooms}`);
+    if (timeline)       messageParts.push(`Timeline: ${timeline}`);
     if (priorities)     messageParts.push(`Priorities: ${priorities}`);
     if (message)        messageParts.push(`Additional Notes: ${message}`);
 
