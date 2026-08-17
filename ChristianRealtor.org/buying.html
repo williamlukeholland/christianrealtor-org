@@ -613,8 +613,17 @@ footer { background: #3D1520; padding: 2.5rem 4rem; display: flex; justify-conte
             </div>
           </div>
           <div class="form-field">
+            <label for="blf-timeline">Purchase Timeline</label>
+            <select id="blf-timeline" name="timeline">
+              <option value="" selected>Not sure yet</option>
+              <option>1-2 months</option>
+              <option>3-4 months</option>
+              <option>6+ months</option>
+            </select>
+          </div>
+          <div class="form-field">
             <label for="blf-notes">Anything Else Luke Should Know?</label>
-            <textarea id="blf-notes" name="message" placeholder="Timeline, must-haves, deal-breakers, current situation, anything helpful"></textarea>
+            <textarea id="blf-notes" name="message" placeholder="Must-haves, deal-breakers, current situation, anything helpful"></textarea>
           </div>
           <div class="form-submit-wrap">
             <button type="submit" class="form-submit-btn" id="blf-submit-btn">Send Me My Free Home List</button>
@@ -1069,12 +1078,14 @@ window.widgetTracker("send", "pageview");
     var message = form.querySelector('#blf-notes').value.trim();
     var beds = form.querySelector('#blf-beds').value;
     var baths = form.querySelector('#blf-baths').value;
+    var timeline = form.querySelector('#blf-timeline').value;
 
     var fullMessage = [
       'Area: ' + area,
       'Price Range: ' + price,
       beds ? 'Bedrooms: ' + beds : '',
       baths ? 'Bathrooms: ' + baths : '',
+      timeline ? 'Timeline: ' + timeline : '',
       priorities ? 'Priorities: ' + priorities : '',
       message ? 'Additional Notes: ' + message : ''
     ].filter(Boolean).join('\n');
@@ -1107,6 +1118,7 @@ window.widgetTracker("send", "pageview");
             price_range: price,
             bedrooms: beds,
             bathrooms: baths,
+            timeline: timeline,
             priorities: priorities,
             message: message
           })
