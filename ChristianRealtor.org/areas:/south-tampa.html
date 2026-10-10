@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>South Tampa Homes for Sale &amp; Real Estate | William 'Luke' Holland</title>
-<meta name="description" content="South Tampa homes for sale in Hyde Park, Palma Ceia, Ballast Point, Davis Islands and Beach Park, plus live market data and open houses.">
+<meta name="description" content="South Tampa homes for sale in Hyde Park, Palma Ceia, Ballast Point, Davis Islands and Beach Park, plus live market data and local guidance.">
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:title" content="South Tampa Homes for Sale &amp; Real Estate | William 'Luke' Holland">
-<meta property="og:description" content="Current South Tampa listings, market trends, open houses, and how Hyde Park, Palma Ceia, Ballast Point, Davis Islands, and Beach Park compare.">
+<meta property="og:description" content="Current South Tampa listings, market trends, and how Hyde Park, Palma Ceia, Ballast Point, Davis Islands, and Beach Park compare.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://christianrealtor.org/areas/south-tampa">
 <meta property="og:image" content="https://christianrealtor.org/images/bayshore-blvd-drone-poster.jpg">
@@ -26,7 +26,7 @@
       "@id": "https://christianrealtor.org/areas/south-tampa#webpage",
       "url": "https://christianrealtor.org/areas/south-tampa",
       "name": "South Tampa Homes for Sale & Real Estate",
-      "description": "South Tampa homes for sale, live market data, open houses, and neighborhood guidance for Hyde Park, Palma Ceia, Ballast Point, Davis Islands, and Beach Park.",
+      "description": "South Tampa homes for sale, live market data, and neighborhood guidance for Hyde Park, Palma Ceia, Ballast Point, Davis Islands, and Beach Park.",
       "inLanguage": "en-US",
       "dateModified": "2026-10-09",
       "breadcrumb": {
@@ -272,13 +272,11 @@
   .hero-cta-pair, .cta-pair { display: flex; gap: 1rem; flex-wrap: wrap; }
 
   /* SECTIONS */
-  #homes, #why, #market, #neighborhoods, #open-houses, #faq { padding: 4.5rem 4rem; }
+  #why, #market, #neighborhoods, #faq { padding: 4.5rem 4rem; }
   .alt { background: var(--cream); }
   .widget-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .widget-listings { min-height: 480px; }
-  .widget-market { min-height: 320px; }
+  .widget-market { min-height: 480px; }
   .widget-note { margin-top: 1.5rem; color: var(--slate); font-size: 0.95rem; }
-  #open-houses.is-empty { display: none; }
 
   .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .why-card { background: var(--cream); border-top: 3px solid var(--gold); border-radius: 2px; padding: 1.75rem; }
@@ -333,7 +331,7 @@
     .nav-links { display: none !important; }
     .nav-cta { display: none; }
     #area-hero { padding: 6.5rem 1.5rem 3.5rem; }
-    #homes, #why, #market, #neighborhoods, #open-houses, #faq { padding: 3.5rem 1.25rem; }
+    #why, #market, #neighborhoods, #faq { padding: 3.5rem 1.25rem; }
     .why-grid { grid-template-columns: 1fr; gap: 1rem; }
     .hero-cta-pair, .cta-pair { flex-direction: column; }
     .hero-cta-pair a, .cta-pair a { text-align: center; }
@@ -492,33 +490,34 @@ window.widgetTracker("send", "pageview");
       </ol>
     </nav>
     <h1>South Tampa Homes for Sale <em>&amp;&nbsp;Real Estate</em></h1>
-    <p>South Tampa is the peninsula between Hillsborough Bay and Old Tampa Bay, just minutes from downtown Tampa. It is home to some of the city's most established neighborhoods: brick streets and bungalows in Hyde Park, the bayfront stretch of Bayshore Boulevard, and island living on Davis Islands. Below you'll find the homes for sale right now, what the market is doing, and how the neighborhoods compare.</p>
+    <p>South Tampa is the peninsula between Hillsborough Bay and Old Tampa Bay, just minutes from downtown Tampa. It is home to some of the city's most established neighborhoods: brick streets and bungalows in Hyde Park, the bayfront stretch of Bayshore Boulevard, and island living on Davis Islands. Below you'll find homes for sale, what the market is doing, and how the neighborhoods compare.</p>
     <div class="hero-cta-pair">
-      <a href="#homes" class="btn-primary" data-track="st_hero">Explore South Tampa Homes</a>
+      <a href="#market" class="btn-primary" data-track="st_hero">Explore South Tampa Homes</a>
       <a href="/index.html#contact" class="btn-outline-white">Ask Luke About South Tampa</a>
     </div>
   </div>
 </section>
 
-<!-- AVAILABLE HOMES (iHomefinder Listing Report) -->
-<section id="homes" class="widget-section">
+<!-- MARKET SNAPSHOT (iHomefinder Market Report) -->
+<section id="market" class="widget-section alt">
   <div class="section-inner">
-    <div class="section-eyebrow"><div class="line"></div><span>Available Now</span></div>
-    <h2 class="section-title">South Tampa Homes <em>for Sale</em></h2>
-    <p class="section-subtitle">Current MLS listings in South Tampa, updated as homes come on and off the market. Save the homes you like, and the site learns what you're looking for and sends you more of it.</p>
-    <div class="widget-wrap widget-listings">
-      <!-- ===== iHOMEFINDER EMBED: LISTING REPORT (South Tampa, marketReportTypeId 1) =====
-           To change: replace only the <script>...</script> below. Keep it a plain inline script (no async/defer/module). -->
+    <div class="section-eyebrow"><div class="line"></div><span>Homes &amp; Market Data</span></div>
+    <h2 class="section-title">South Tampa Homes <em>&amp; Market Trends</em></h2>
+    <p class="section-subtitle">Current South Tampa listings alongside recent prices, inventory, and how quickly homes are selling, so you can tell whether a home is priced with the market or ahead of it. Save the homes you like, and the site learns what you're looking for and sends you more of it. Before any offer, Luke pulls neighborhood-level comparable sales.</p>
+    <div class="widget-wrap widget-market">
+      <!-- ===== iHOMEFINDER EMBED: MARKET REPORT (South Tampa, marketReportTypeId 3) =====
+           To change: replace only the <script>...</script> below. Keep it a plain inline script. -->
       <script>
 	document.currentScript.replaceWith(ihfKestrel.render({
 		"component": "marketReportWidget",
 		"id": 3033791,
-		"marketReportTypeId": 1
+		"marketReportTypeId": 3
 	}));
 </script>
-      <!-- ===== END LISTING REPORT ===== -->
+      <!-- ===== END MARKET REPORT ===== -->
     </div>
-    <p class="widget-note">Looking beyond South Tampa? <a href="/listings" class="text-link" data-track="st_homes">Search every home for sale from Dade City to Sarasota</a>.</p>
+    <p class="widget-note">Looking beyond South Tampa? <a href="/listings" class="text-link" data-track="st_market">Search every home for sale from Dade City to Sarasota</a>.</p>
+    <p class="widget-note">Own a home here? <a href="/home-value" class="text-link">See what your South Tampa home is worth</a> or learn how Luke handles <a href="/selling" class="text-link">selling</a>.</p>
   </div>
 </section>
 
@@ -544,30 +543,8 @@ window.widgetTracker("send", "pageview");
   </div>
 </section>
 
-<!-- MARKET SNAPSHOT (iHomefinder Market Report) -->
-<section id="market" class="widget-section alt">
-  <div class="section-inner">
-    <div class="section-eyebrow"><div class="line"></div><span>Market Snapshot</span></div>
-    <h2 class="section-title">The South Tampa <em>Market Right Now</em></h2>
-    <p class="section-subtitle">Prices and inventory in South Tampa can shift block to block. This live report shows recent prices, inventory, and how quickly homes are selling, so you can tell whether a listing is priced with the market or ahead of it. Luke pulls neighborhood-level comparable sales before any offer.</p>
-    <div class="widget-wrap widget-market">
-      <!-- ===== iHOMEFINDER EMBED: MARKET REPORT (South Tampa, marketReportTypeId 3) =====
-           To change: replace only the <script>...</script> below. Keep it a plain inline script. -->
-      <script>
-	document.currentScript.replaceWith(ihfKestrel.render({
-		"component": "marketReportWidget",
-		"id": 3033791,
-		"marketReportTypeId": 3
-	}));
-</script>
-      <!-- ===== END MARKET REPORT ===== -->
-    </div>
-    <p class="widget-note">Own a home here? <a href="/home-value" class="text-link">See what your South Tampa home is worth</a> or learn how Luke handles <a href="/selling" class="text-link">selling</a>.</p>
-  </div>
-</section>
-
 <!-- EXPLORE NEIGHBORHOODS -->
-<section id="neighborhoods">
+<section id="neighborhoods" class="alt">
   <div class="section-inner">
     <div class="section-eyebrow"><div class="line"></div><span>Explore Neighborhoods</span></div>
     <h2 class="section-title">South Tampa, <em>Neighborhood by Neighborhood</em></h2>
@@ -595,28 +572,6 @@ window.widgetTracker("send", "pageview");
       </div>
     </div>
     <p class="widget-note">Comparing other parts of the Gulf Coast? <a href="/areas" class="text-link">See all areas Luke serves</a>.</p>
-  </div>
-</section>
-
-<!-- UPCOMING OPEN HOUSES (iHomefinder Open Houses Report) -->
-<!-- This section hides itself if the report stays empty, and reappears if open houses load. -->
-<section id="open-houses" class="widget-section alt">
-  <div class="section-inner">
-    <div class="section-eyebrow"><div class="line"></div><span>This Week</span></div>
-    <h2 class="section-title">Upcoming South Tampa <em>Open Houses</em></h2>
-    <p class="section-subtitle">Open houses are a low-pressure way to compare finishes, lot sizes, and streets. If you'd rather see a home privately, Luke can schedule a showing.</p>
-    <div class="widget-wrap widget-open" id="open-houses-slot">
-      <!-- ===== iHOMEFINDER EMBED: OPEN HOUSES REPORT (South Tampa, marketReportTypeId 2) =====
-           To change: replace only the <script>...</script> below. Keep it a plain inline script. -->
-      <script>
-	document.currentScript.replaceWith(ihfKestrel.render({
-		"component": "marketReportWidget",
-		"id": 3033791,
-		"marketReportTypeId": 2
-	}));
-</script>
-      <!-- ===== END OPEN HOUSES REPORT ===== -->
-    </div>
   </div>
 </section>
 
@@ -715,21 +670,6 @@ function toggleFaq(btn) {
   });
   if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
 }
-</script>
-
-<!-- OPEN HOUSES: hide the section if the report stays empty; show it again if content loads later -->
-<script>
-(function() {
-  var section = document.getElementById('open-houses');
-  var slot = document.getElementById('open-houses-slot');
-  if (!section || !slot) return;
-  var MIN = 80; // px of rendered content that counts as "has open houses"
-  function hasContent() { return slot.scrollHeight >= MIN; }
-  setTimeout(function() { if (!hasContent()) section.classList.add('is-empty'); }, 10000);
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(function() { if (hasContent()) section.classList.remove('is-empty'); }).observe(slot);
-  }
-})();
 </script>
 
 <!-- CTA CLICK TRACKING (GA4 event, not a conversion) -->
