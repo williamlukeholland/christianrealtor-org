@@ -116,6 +116,7 @@
   html { scroll-behavior: smooth; }
   body { font-family: "Lato", sans-serif; color: var(--text-dark); background: var(--white); line-height: 1.7; }
 
+  
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -132,17 +133,16 @@
   .nav-dropdown { position: relative; }
   .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
   .nav-dropdown > a::after { content: "▾"; font-size: 0.6rem; opacity: 0.7; transition: transform 0.2s; }
-  .nav-dropdown:hover > a::after { transform: rotate(180deg); }
-  .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 0.25rem); left: 50%; transform: translateX(-50%); background: #3D1520; border: 1px solid rgba(206,184,136,0.2); border-radius: 2px; min-width: 180px; padding: 0.5rem 0; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
-  .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+  .nav-dropdown:hover > a::after, .nav-dropdown.open > a::after { transform: rotate(180deg); }
+  .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 0.25rem); left: 50%; transform: translateX(-50%); background: #3D1520; border: 1px solid rgba(206,184,136,0.2); border-radius: 2px; min-width: 200px; padding: 0.5rem 0; z-index: 200; box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+  .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown.open .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu { display: block; }
   .nav-dropdown::after { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 0.5rem; background: transparent; }
-  .nav-dropdown:hover::after { display: block; }
   .nav-dropdown-menu a { display: block; padding: 0.6rem 1.25rem; color: rgba(255,255,255,0.75); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: color 0.2s, background 0.2s; white-space: nowrap; }
   .nav-dropdown-menu a:hover { color: var(--gold); background: rgba(206,184,136,0.08); }
   .nav-cta { background: var(--gold); color: var(--white); padding: 0.45rem 1.1rem; border-radius: 2px; text-decoration: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
   .nav-cta:hover { background: var(--gold-light); }
 
-  /* HAMBURGER MENU */
+  /* HAMBURGER + MOBILE MENU */
   .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
   @media (min-width: 901px) { .hamburger { display: none !important; } }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
@@ -152,25 +152,31 @@
   .mobile-menu {
     display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
     background: var(--navy); z-index: 150; flex-direction: column;
-    align-items: center; justify-content: center; gap: 2rem;
+    align-items: center; gap: 1.1rem;
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    padding: 4.5rem 1.5rem 3rem;
   }
   .mobile-menu.open { display: flex; }
+  .mobile-menu > :first-child { margin-top: auto; }
+  .mobile-menu > :last-child { margin-bottom: auto; }
   .mobile-menu a {
-    color: rgba(255,255,255,0.85); text-decoration: none; font-size: 1.1rem;
+    color: rgba(255,255,255,0.85); text-decoration: none; font-size: 1.05rem;
     letter-spacing: 0.12em; text-transform: uppercase; font-family: "Lato", sans-serif;
-    font-weight: 700; transition: color 0.2s;
+    font-weight: 700; transition: color 0.2s; text-align: center;
   }
   .mobile-menu a:hover, .mobile-menu a.active { color: var(--gold); }
-  .mobile-menu .mobile-cta {
-    background: var(--gold); color: var(--white) !important; padding: 0.85rem 2.5rem;
-    border-radius: 2px; margin-top: 1rem;
-  }
+  .mobile-menu .mobile-sub { font-size: 0.85rem; font-weight: 400; color: rgba(255,255,255,0.65); margin-top: -0.6rem; }
+  .mobile-menu .mobile-sub::before { content: "\2013\00a0"; color: var(--gold); }
+  .mobile-menu .mobile-label { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; margin-top: 0.4rem; }
+  .mobile-menu .mobile-cta { background: var(--gold); color: var(--white) !important; padding: 0.85rem 2.5rem; border-radius: 2px; margin-top: 0.75rem; }
   .mobile-menu .mobile-close {
-    position: absolute; top: 1.25rem; right: 1.5rem; font-size: 1.75rem;
-    color: rgba(255,255,255,0.6); background: none; border: none; cursor: pointer;
-    line-height: 1;
+    position: fixed; top: 1.25rem; right: 1.5rem; font-size: 1.75rem;
+    color: rgba(255,255,255,0.6); background: none; border: none; cursor: pointer; line-height: 1;
   }
+  .nav-cta, .nav-cta:visited { color: var(--white) !important; }
 
+
+  
   /* PAGE HERO */
   #page-hero {
     background: var(--navy);
@@ -363,67 +369,135 @@ window.widgetTracker("send", "pageview");
 <body>
 
 <nav>
-<a href="index.html" class="nav-logo">
+<a href="/index.html" class="nav-logo">
 <span class="cross"><svg class="cross-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="10.5" y="2" width="3" height="20" rx="1"/><rect x="3" y="8" width="18" height="3" rx="1"/></svg></span>
 <span>William 'Luke' Holland | Realtor</span>
 </a>
 <button class="hamburger" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
 <ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="buying.html">Buy</a></li>
-<li><a href="selling.html">Sell</a></li>
-<li><a href="home-value.html">Home Value</a></li>
-<li><a href="areas.html">Areas</a></li>
+<li><a href="/index.html">Home</a></li>
+<li><a href="/listings">Search Homes</a></li>
+<li class="nav-dropdown">
+<a href="/buying.html">Buy</a>
+<div class="nav-dropdown-menu">
+<a href="/buying.html">Buying with Luke</a>
+<a href="/buying.html#smart-search">Smart Search &amp; Alerts</a>
+</div>
+</li>
+<li class="nav-dropdown">
+<a href="/selling.html">Sell</a>
+<div class="nav-dropdown-menu">
+<a href="/selling.html">Selling with Luke</a>
+<a href="/home-value.html">What's My Home Worth?</a>
+</div>
+</li>
+<li class="nav-dropdown">
+<a href="/areas.html">Areas</a>
+<div class="nav-dropdown-menu">
+<a href="/areas.html">All Areas</a>
+<a href="/waterfront">Waterfront Homes</a>
+<!-- MARKET PAGES: add each new market page on its own line below -->
+<a href="/areas/south-tampa">South Tampa</a>
+<a href="/areas/st-petersburg">St. Petersburg</a>
+<a href="/areas/wesley-chapel-new-tampa">Wesley Chapel &amp; New Tampa</a>
+<a href="/areas/fishhawk-lithia">FishHawk &amp; Lithia</a>
+<a href="/areas/riverview-apollo-beach">Riverview &amp; Apollo Beach</a>
+<a href="/areas/lutz-land-o-lakes">Lutz &amp; Land O' Lakes</a>
+<a href="/areas/wimauma-ruskin">Wimauma &amp; Ruskin</a>
+<a href="/areas/sun-city-center">Sun City Center</a>
+<a href="/areas/brandon-valrico">Brandon &amp; Valrico</a>
+<a href="/areas/lakewood-ranch-parrish">Lakewood Ranch &amp; Parrish</a>
+<a href="/areas/sarasota">Sarasota</a>
+<a href="/areas/dade-city-zephyrhills">Dade City &amp; Zephyrhills</a>
+</div>
+</li>
 <li class="nav-dropdown">
 <a href="#">Resources</a>
 <div class="nav-dropdown-menu">
-<a href="new-construction.html">New Construction</a>
-<a href="tools.html">Tools</a>
-<a href="blog.html">Blog</a>
+<a href="/new-construction.html">New Construction</a>
+<a href="/tools.html">Tools</a>
+<a href="/blog.html">Blog</a>
 </div>
 </li>
 </ul>
-<a href="index.html#contact" class="nav-cta">Contact</a>
+<a href="/index.html#contact" class="nav-cta">Contact</a>
 </nav>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
 <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
-<a href="index.html">Home</a>
-<a href="buying.html">Buy</a>
-<a href="selling.html">Sell</a>
-<a href="home-value.html">Home Value</a>
-<a href="areas.html">Areas</a>
-<a href="new-construction.html">New Construction</a>
-<a href="tools.html">Tools</a>
-<a href="blog.html">Blog</a>
-<a href="index.html#contact" class="mobile-cta">Contact</a>
+<a href="/index.html">Home</a>
+<a href="/listings">Search Homes</a>
+<a href="/buying.html">Buy</a>
+<a href="/buying.html#smart-search" class="mobile-sub">Smart Search &amp; Alerts</a>
+<a href="/selling.html">Sell</a>
+<a href="/home-value.html" class="mobile-sub">What's My Home Worth?</a>
+<a href="/areas.html">Areas</a>
+<a href="/waterfront" class="mobile-sub">Waterfront Homes</a>
+<!-- MARKET PAGES (mobile): add each new market page on its own line below -->
+<a href="/areas/south-tampa" class="mobile-sub">South Tampa</a>
+<a href="/areas/st-petersburg" class="mobile-sub">St. Petersburg</a>
+<a href="/areas/wesley-chapel-new-tampa" class="mobile-sub">Wesley Chapel &amp; New Tampa</a>
+<a href="/areas/fishhawk-lithia" class="mobile-sub">FishHawk &amp; Lithia</a>
+<a href="/areas/riverview-apollo-beach" class="mobile-sub">Riverview &amp; Apollo Beach</a>
+<a href="/areas/lutz-land-o-lakes" class="mobile-sub">Lutz &amp; Land O' Lakes</a>
+<a href="/areas/wimauma-ruskin" class="mobile-sub">Wimauma &amp; Ruskin</a>
+<a href="/areas/sun-city-center" class="mobile-sub">Sun City Center</a>
+<a href="/areas/brandon-valrico" class="mobile-sub">Brandon &amp; Valrico</a>
+<a href="/areas/lakewood-ranch-parrish" class="mobile-sub">Lakewood Ranch &amp; Parrish</a>
+<a href="/areas/sarasota" class="mobile-sub">Sarasota</a>
+<a href="/areas/dade-city-zephyrhills" class="mobile-sub">Dade City &amp; Zephyrhills</a>
+<span class="mobile-label">Resources</span>
+<a href="/new-construction.html" class="mobile-sub">New Construction</a>
+<a href="/tools.html" class="mobile-sub">Tools</a>
+<a href="/blog.html" class="mobile-sub">Blog</a>
+<a href="/index.html#contact" class="mobile-cta">Contact</a>
 </div>
 <script>
   (function() {
+    /* Mobile menu */
     var btn = document.getElementById('hamburger-btn');
     var menu = document.getElementById('mobile-menu');
     var close = document.getElementById('mobile-close');
-    if (!btn || !menu) return;
-    btn.addEventListener('click', function() {
-      menu.classList.add('open');
-      btn.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    });
-    close.addEventListener('click', function() {
-      menu.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-    menu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
+    if (btn && menu) {
+      var shut = function() {
         menu.classList.remove('open');
         btn.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+      };
+      btn.addEventListener('click', function() {
+        menu.classList.add('open');
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
       });
+      if (close) close.addEventListener('click', shut);
+      menu.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', shut); });
+    }
+
+    /* Touch devices: first tap on a dropdown parent opens it, second tap follows the link */
+    var noHover = window.matchMedia && window.matchMedia('(hover: none)').matches;
+    var drops = document.querySelectorAll('.nav-dropdown');
+    drops.forEach(function(drop) {
+      var parent = drop.querySelector(':scope > a');
+      if (!parent) return;
+      parent.addEventListener('click', function(e) {
+        var isHashOnly = parent.getAttribute('href') === '#';
+        if (noHover || isHashOnly) {
+          if (!drop.classList.contains('open') || isHashOnly) {
+            e.preventDefault();
+            var wasOpen = drop.classList.contains('open');
+            drops.forEach(function(d) { d.classList.remove('open'); });
+            if (!(isHashOnly && wasOpen)) drop.classList.add('open');
+          }
+        }
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        drops.forEach(function(d) { d.classList.remove('open'); });
+      }
     });
   })();
 </script>
