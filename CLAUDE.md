@@ -50,8 +50,17 @@ Items marked `[TO CONFIRM: …]` are known unknowns. Never fill them in by guess
   - Google tags are present on most pages
 
 **Known facts about this codebase**
-- Each page has its own `<style>` block; there is no shared stylesheet, so design
-  changes may need repeating across pages.
+- Each page has its own `<style>` block, so design changes may need repeating
+  across pages. The one exception is the site navigation (below).
+- **Site navigation is shared.** The menu is plain HTML in every page (between
+  `<!-- SITE NAV:START -->` and `<!-- SITE NAV:END -->`, plus an assets block
+  before `</head>`), styled by `ChristianRealtor.org/css/nav.css` and enhanced by
+  `ChristianRealtor.org/js/nav.js`. Never hand-edit the menu inside a page. To
+  change it, edit the menu lists in `site-tools/sync-nav.py` (repository root, not
+  published), run `python3 site-tools/sync-nav.py`, then
+  `python3 site-tools/sync-nav.py --check`, and review the diff. A new page needs
+  both marker pairs (copy them from any existing page) before running the script.
+  The script sets the current-page highlight and `aria-current` automatically.
 - Blog posts are complete hand-built HTML pages (copy an existing post as the
   template). The blog index and sitemap are updated by hand.
 - `ChristianRealtor.org/admin/config.yml` is a leftover, non-functional Decap CMS
