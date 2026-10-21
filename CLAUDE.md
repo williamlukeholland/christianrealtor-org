@@ -90,8 +90,10 @@ public content.
 
 ### Brokerage
 - Public-facing name: **Future Home Realty**
-- Registered legal name: `[TO CONFIRM: verify via Florida DBPR]` — do not assume
-  the public name is the full legal name.
+- Licensed name: **Future Home Realty Inc.** (DBPR: FUTURE HOME REALTY INC, real
+  estate corporation CQ1012254, current/active; verified October 20, 2026). Luke's
+  license SL3590135 is registered as HOLLAND, WILLIAM LUKE LLC, employed by this
+  brokerage. Use the licensed name, not the shortened public name, in advertising.
 - Broker of record: `[TO CONFIRM]`
 - Written brokerage advertising policy: `[TO CONFIRM]`
 
@@ -429,7 +431,6 @@ permission.
 ## 14. Open items
 
 - `[TO CONFIRM]` Repository visibility (public/private)
-- `[TO CONFIRM]` Brokerage registered legal name (via DBPR)
 - `[TO CONFIRM]` Broker of record
 - `[TO CONFIRM]` Written brokerage advertising policy
 - `[TO CONFIRM]` Recheck `FUB_API_KEY` is still Production-only

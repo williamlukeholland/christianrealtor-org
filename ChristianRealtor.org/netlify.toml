@@ -1,6 +1,19 @@
 [build]
   functions = "netlify/functions"
 
+# The June 2026 market post was replaced by a permanent, regularly updated report.
+[[redirects]]
+  from = "/blog/tampa-bay-market-update-june-2026"
+  to = "/blog/tampa-bay-market-update"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tampa-bay-market-update-june-2026.html"
+  to = "/blog/tampa-bay-market-update"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/admin/*"
   [headers.values]
