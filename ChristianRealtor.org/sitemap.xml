@@ -116,12 +116,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://christianrealtor.org/tools.html</loc>
+    <loc>https://christianrealtor.org/tools</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://christianrealtor.org/blog.html</loc>
+    <loc>https://christianrealtor.org/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -131,12 +131,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://christianrealtor.org/process.html</loc>
+    <loc>https://christianrealtor.org/process</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://christianrealtor.org/blog/how-to-know-what-your-home-is-worth-tampa-bay.html</loc>
+    <loc>https://christianrealtor.org/blog/how-to-know-what-your-home-is-worth-tampa-bay</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -146,17 +146,17 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://christianrealtor.org/blog/first-time-home-buyer-guide-tampa-bay.html</loc>
+    <loc>https://christianrealtor.org/blog/first-time-home-buyer-guide-tampa-bay</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://christianrealtor.org/blog/living-in-brandon-florida.html</loc>
+    <loc>https://christianrealtor.org/blog/living-in-brandon-florida</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://christianrealtor.org/privacy.html</loc>
+    <loc>https://christianrealtor.org/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

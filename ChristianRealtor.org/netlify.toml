@@ -14,6 +14,229 @@
   status = 301
   force = true
 
+# One address per page: send every .html address to its clean URL so search
+# engines don't index two copies. Netlify still serves the .html file at the
+# clean URL. The Google verification file and /admin are intentionally left out.
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas.html"
+  to = "/areas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/brandon-valrico.html"
+  to = "/areas/brandon-valrico"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/dade-city-zephyrhills.html"
+  to = "/areas/dade-city-zephyrhills"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/fishhawk-lithia.html"
+  to = "/areas/fishhawk-lithia"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/lakewood-ranch-parrish.html"
+  to = "/areas/lakewood-ranch-parrish"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/lutz-land-o-lakes.html"
+  to = "/areas/lutz-land-o-lakes"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/riverview-apollo-beach.html"
+  to = "/areas/riverview-apollo-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/sarasota.html"
+  to = "/areas/sarasota"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/south-tampa.html"
+  to = "/areas/south-tampa"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/st-petersburg.html"
+  to = "/areas/st-petersburg"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/sun-city-center.html"
+  to = "/areas/sun-city-center"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/wesley-chapel-new-tampa.html"
+  to = "/areas/wesley-chapel-new-tampa"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/wimauma-ruskin.html"
+  to = "/areas/wimauma-ruskin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/first-time-home-buyer-guide-tampa-bay.html"
+  to = "/blog/first-time-home-buyer-guide-tampa-bay"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/how-to-know-what-your-home-is-worth-tampa-bay.html"
+  to = "/blog/how-to-know-what-your-home-is-worth-tampa-bay"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/living-in-brandon-florida.html"
+  to = "/blog/living-in-brandon-florida"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tampa-bay-market-update.html"
+  to = "/blog/tampa-bay-market-update"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buying.html"
+  to = "/buying"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/difference.html"
+  to = "/difference"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq.html"
+  to = "/faq"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/featured-listings.html"
+  to = "/featured-listings"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home-value.html"
+  to = "/home-value"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/idx.html"
+  to = "/idx"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/listings.html"
+  to = "/listings"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/new-construction.html"
+  to = "/new-construction"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/process.html"
+  to = "/process"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/selling.html"
+  to = "/selling"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sign.html"
+  to = "/sign"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools.html"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/waterfront-condos.html"
+  to = "/waterfront-condos"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/waterfront.html"
+  to = "/waterfront"
+  status = 301
+  force = true
+
+
+# areas/tools.html was a stray duplicate of tools.html and has been removed.
+
+[[redirects]]
+  from = "/areas/tools"
+  to = "/tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas/tools.html"
+  to = "/tools"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/admin/*"
   [headers.values]

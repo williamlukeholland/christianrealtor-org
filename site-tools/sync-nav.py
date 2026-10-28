@@ -68,10 +68,10 @@ AREAS = [
     ]),
 ]
 RESOURCES = [
-    ("Blog", "/blog.html"),
+    ("Blog", "/blog"),
     ("Tampa Bay Market Update", "/blog/tampa-bay-market-update"),
-    ("Tools &amp; Calculators", "/tools.html"),
-    ("Buying &amp; Selling Process", "/process.html"),
+    ("Tools &amp; Calculators", "/tools"),
+    ("Buying &amp; Selling Process", "/process"),
     ("FAQ", "/faq"),
 ]
 
@@ -81,7 +81,6 @@ PAGE_KEY_OVERRIDES = {
     "index.html": "/",
     "listings.html": "/listings",
     "idx.html": "/listings",          # property detail pages belong to the search
-    "areas/tools.html": "/tools.html",
     "featured-listings.html": "/featured-listings",
     "sign.html": "/sign",
 }
